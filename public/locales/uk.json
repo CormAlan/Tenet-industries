@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Мінімальна демонстрація Pixel Scroll"
+  },
+  "brand": "Tenet Industries",
+  "language": {
+    "label": "Мова",
+    "ariaLabel": "Перемикач мови"
+  },
+  "nav": {
+    "platform": "Платформа",
+    "systems": "Системи",
+    "doctrine": "Доктрина",
+    "contact": "Контакт"
+  },
+  "hero": {
+    "eyebrow": "Мінімальна демонстрація scroll reveal",
+    "title": "заголовок домашньої сторінки",
+    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+  },
+  "sections": {
+    "section1": {
+      "tag": "Секція 01",
+      "title": "підзаголовок 1",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+    },
+    "section2": {
+      "tag": "Секція 02",
+      "title": "підзаголовок 2",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+    },
+    "section3": {
+      "tag": "Секція 03",
+      "title": "підзаголовок 3",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+    }
+  },
+  "media": {
+    "placeholder": "Заповнювач зображення"
+  },
+  "footer": {
+    "heroReveal": "Часове відкриття в hero-блоці",
+    "sectionReveal": "Відкриття при прокрутці в секціях"
+  },
+  "contact": {
+    "meta": {
+      "title": "Контакт"
+    },
+    "hero": {
+      "eyebrow": "Канал передачі",
+      "title": "Зв’яжіться з нами",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+    },
+    "form": {
+      "tag": "Контактна форма",
+      "title": "Надіслати повідомлення",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ми спрямуємо ваше повідомлення до потрібного каналу.",
+      "submit": "Надіслати запит",
+      "fields": {
+        "name": {
+          "label": "Ім’я",
+          "placeholder": "Ваше ім’я"
+        },
+        "email": {
+          "label": "Електронна пошта",
+          "placeholder": "your@email.com"
+        },
+        "company": {
+          "label": "Компанія",
+          "placeholder": "Компанія або організація"
+        },
+        "subject": {
+          "label": "Тема",
+          "placeholder": "Що це стосується?"
+        },
+        "message": {
+          "label": "Повідомлення",
+          "placeholder": "Напишіть своє повідомлення тут"
+        }
+      }
+    },
+    "details": {
+      "tag": "Пряма лінія",
+      "title": "Контактні дані",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "items": {
+        "email": {
+          "label": "Електронна пошта",
+          "value": "contact@example.com"
+        },
+        "phone": {
+          "label": "Телефон",
+          "value": "+00 123 456 789"
+        },
+        "location": {
+          "label": "Місцезнаходження",
+          "value": "Стокгольм, Швеція"
+        }
+      },
+      "meta": {
+        "response": {
+          "label": "Відповідь",
+          "value": "Протягом 24 год"
+        },
+        "availability": {
+          "label": "Доступність",
+          "value": "Пн–Пт"
+        },
+        "security": {
+          "label": "Канал",
+          "value": "Зашифрований"
+        }
+      }
+    }
+  }
+}

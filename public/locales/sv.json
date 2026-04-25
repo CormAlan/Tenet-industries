@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Minimal Pixel Scroll Demo"
+  },
+  "brand": "Tenet Industries",
+  "language": {
+    "label": "Språk",
+    "ariaLabel": "Språkväljare"
+  },
+  "nav": {
+    "platform": "Plattform",
+    "systems": "System",
+    "doctrine": "Doktrin",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "eyebrow": "Minimal demo för scroll reveal",
+    "title": "Hemsida titel",
+    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+  },
+  "sections": {
+    "section1": {
+      "tag": "Sektion 01",
+      "title": "Mindre titel 1",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+    },
+    "section2": {
+      "tag": "Sektion 02",
+      "title": "Mindre titel 2",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+    },
+    "section3": {
+      "tag": "Sektion 03",
+      "title": "Mindre titel 3",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+    }
+  },
+  "media": {
+    "placeholder": "Bildplats"
+  },
+  "footer": {
+    "heroReveal": "Tidsbaserad reveal i hero",
+    "sectionReveal": "Scroll reveal i sektioner"
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt"
+    },
+    "hero": {
+      "eyebrow": "Transmissionskanal",
+      "title": "Ta kontakt",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+    },
+    "form": {
+      "tag": "Kontaktformulär",
+      "title": "Skicka ett meddelande",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vi skickar ditt meddelande till rätt kanal.",
+      "submit": "Skicka förfrågan",
+      "fields": {
+        "name": {
+          "label": "Namn",
+          "placeholder": "Ditt namn"
+        },
+        "email": {
+          "label": "E-post",
+          "placeholder": "din@email.com"
+        },
+        "company": {
+          "label": "Företag",
+          "placeholder": "Företag eller organisation"
+        },
+        "subject": {
+          "label": "Ämne",
+          "placeholder": "Vad gäller detta?"
+        },
+        "message": {
+          "label": "Meddelande",
+          "placeholder": "Skriv ditt meddelande här"
+        }
+      }
+    },
+    "details": {
+      "tag": "Direktlinje",
+      "title": "Kontaktuppgifter",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "items": {
+        "email": {
+          "label": "E-post",
+          "value": "contact@example.com"
+        },
+        "phone": {
+          "label": "Telefon",
+          "value": "+00 123 456 789"
+        },
+        "location": {
+          "label": "Plats",
+          "value": "Stockholm, Sverige"
+        }
+      },
+      "meta": {
+        "response": {
+          "label": "Svarstid",
+          "value": "Inom 24 h"
+        },
+        "availability": {
+          "label": "Tillgänglighet",
+          "value": "Mån–fre"
+        },
+        "security": {
+          "label": "Kanal",
+          "value": "Krypterad"
+        }
+      }
+    }
+  }
+}

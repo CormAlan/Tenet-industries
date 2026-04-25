@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Minimal Pixel Scroll Demo"
+  },
+  "brand": "Tenet Industries",
+  "language": {
+    "label": "Lang",
+    "ariaLabel": "Language selector"
+  },
+  "nav": {
+    "platform": "Platform",
+    "systems": "Systems",
+    "doctrine": "Doctrine",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Minimal scroll reveal demo",
+    "title": "Homepage Main Title",
+    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+  },
+  "sections": {
+    "section1": {
+      "tag": "Section 01",
+      "title": "Subtitle 1",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+    },
+    "section2": {
+      "tag": "Section 02",
+      "title": "Subtitle 2",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+    },
+    "section3": {
+      "tag": "Section 03",
+      "title": "Subtitle 3",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+    }
+  },
+  "media": {
+    "placeholder": "Image Placeholder"
+  },
+  "footer": {
+    "heroReveal": "Time reveal in hero",
+    "sectionReveal": "Scroll reveal in sections"
+  },
+  
+  "contact": {
+    "meta": {
+      "title": "Contact"
+    },
+    "hero": {
+      "eyebrow": "Transmission channel",
+      "title": "Get in contact",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+    },
+    "form": {
+      "tag": "Contact form",
+      "title": "Send a message",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. We will route your message to the correct channel.",
+      "submit": "Send inquiry",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your@email.com"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Company or organization"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "What is this regarding?"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Write your message here"
+        }
+      }
+    },
+    "details": {
+      "tag": "Direct line",
+      "title": "Contact details",
+      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "items": {
+        "email": {
+          "label": "Email",
+          "value": "contact@example.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "value": "+00 123 456 789"
+        },
+        "location": {
+          "label": "Location",
+          "value": "Stockholm, Sweden"
+        }
+      },
+      "meta": {
+        "response": {
+          "label": "Response",
+          "value": "Within 24h"
+        },
+        "availability": {
+          "label": "Availability",
+          "value": "Mon–Fri"
+        },
+        "security": {
+          "label": "Channel",
+          "value": "Encrypted"
+        }
+      }
+    }
+  }
+}
+
