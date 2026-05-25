@@ -68,11 +68,14 @@
     }
 
     .brand {
-      font-family: var(--font-head);
-      font-size: 0.94rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
       white-space: nowrap;
+    }
+
+    .brand__logo {
+      height: 34px;
+      width: auto;
     }
 
     .topbar__right {
@@ -421,13 +424,96 @@
     .footer__inner {
       width: var(--page);
       margin: 0 auto;
-      min-height: 88px;
+      padding: 52px 0 32px;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: start;
+    }
+
+    .footer__brand-col {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer__logo-link {
+      display: inline-flex;
+    }
+
+    .footer__logo {
+      height: 26px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer__logo-link:hover .footer__logo {
+      opacity: 1;
+    }
+
+    .footer__tagline {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 34ch;
+      line-height: 1.75;
+    }
+
+    .footer__nav-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer__nav-col a:hover {
+      color: var(--text);
+    }
+
+    .footer__doc-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+    }
+
+    .footer__doc-row {
+      display: flex;
       justify-content: space-between;
       gap: 24px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-soft);
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .footer__doc-row span:first-child {
+      color: var(--muted);
+    }
+
+    .footer__doc-row span:last-child {
+      color: var(--text);
+      text-align: right;
+    }
+
+    .footer__bottom {
+      padding-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
@@ -449,11 +535,13 @@
         gap: 12px;
       }
 
-      .footer__inner {
-        min-height: auto;
-        padding: 28px 0;
-        flex-direction: column;
-        align-items: flex-start;
+      .footer__top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer__doc-col {
+        min-width: 0;
       }
     }
 
@@ -510,11 +598,14 @@
   <div class="page">
     <div class="topbar">
       <div class="topbar__inner">
-        <a href="/" class="brand" data-i18n="brand"></a>
+        <a href="/" class="brand" aria-label="Tenet Industries">
+            <img src="/src/assets/logo.svg" alt="Tenet Industries" class="brand__logo" />
+          </a>
 
         <div class="topbar__right">
           <nav class="nav">
             <a href="/#section-1" data-i18n="nav.platform"></a>
+            <a href="/product" data-i18n="nav.product"></a>
             <a href="/#section-2" data-i18n="nav.systems"></a>
             <a href="/#section-3" data-i18n="nav.doctrine"></a>
             <a href="/contact" data-i18n="nav.contact" aria-current="page"></a>
@@ -649,8 +740,34 @@
 
     <footer class="footer">
       <div class="footer__inner">
-        <span data-i18n="footer.heroReveal"></span>
-        <span data-i18n="footer.sectionReveal"></span>
+        <div class="footer__top">
+          <div class="footer__brand-col">
+            <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
+              <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
+            </a>
+            <p class="footer__tagline" data-i18n="footer.tagline"></p>
+          </div>
+          <nav class="footer__nav-col">
+            <a href="/#section-1" data-i18n="nav.platform"></a>
+            <a href="/product" data-i18n="nav.product"></a>
+            <a href="/#section-2" data-i18n="nav.systems"></a>
+            <a href="/#section-3" data-i18n="nav.doctrine"></a>
+            <a href="/contact" data-i18n="nav.contact"></a>
+          </nav>
+          <div class="footer__doc-col">
+            <div class="footer__doc-row">
+              <span data-i18n="footer.docCompany"></span>
+              <span>Tenet Industries</span>
+            </div>
+            <div class="footer__doc-row">
+              <span data-i18n="footer.docBacked"></span>
+              <span>Y Combinator</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span data-i18n="footer.copyright"></span>
+        </div>
       </div>
     </footer>
   </div>
@@ -736,7 +853,7 @@
           .trim();
 
         this.initialPixelSize =
-          this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 24 : 16;
+          (this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 24 : 16) * (window.devicePixelRatio || 1);
 
         this.pixelSize = this.initialPixelSize;
         this.targetPixelSize = this.initialPixelSize;
@@ -795,27 +912,30 @@
         const ascent = Math.ceil(metrics.actualBoundingBoxAscent || this.fontSize * 0.8);
         const descent = Math.ceil(metrics.actualBoundingBoxDescent || this.fontSize * 0.2);
         const lineBox = Math.ceil((ascent + descent) * this.lineHeight);
-        const height = Math.max(40, lines.length * lineBox + this.padding * 2);
-        const width = innerWidth;
+        const cssHeight = Math.max(40, lines.length * lineBox + this.padding * 2);
+        const cssWidth = innerWidth;
+        const dpr = window.devicePixelRatio || 1;
+        const physW = Math.round(cssWidth * dpr);
+        const physH = Math.round(cssHeight * dpr);
 
-        this.canvas.width = width;
-        this.canvas.height = height;
-        this.canvas.style.width = `${width}px`;
-        this.canvas.style.height = `${height}px`;
+        this.canvas.width = physW;
+        this.canvas.height = physH;
+        this.canvas.style.width = `${cssWidth}px`;
+        this.canvas.style.height = `${cssHeight}px`;
 
-        this.offscreen.width = width;
-        this.offscreen.height = height;
+        this.offscreen.width = physW;
+        this.offscreen.height = physH;
 
         const ctx = this.offCtx;
-        ctx.clearRect(0, 0, width, height);
+        ctx.clearRect(0, 0, physW, physH);
         ctx.fillStyle = this.color;
         ctx.textBaseline = 'alphabetic';
         ctx.textAlign = 'left';
-        ctx.font = `${this.fontWeight} ${this.fontSize}px ${fontFamily}`;
+        ctx.font = `${this.fontWeight} ${this.fontSize * dpr}px ${fontFamily}`;
 
         lines.forEach((line, index) => {
-          const y = this.padding + ascent + index * lineBox;
-          ctx.fillText(line, this.padding, y);
+          const y = Math.round((this.padding + ascent + index * lineBox) * dpr);
+          ctx.fillText(line, Math.round(this.padding * dpr), y);
         });
 
         this.draw();

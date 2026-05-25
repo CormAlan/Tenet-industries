@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Minimal Pixel Scroll Demo"
+    "title": "Tenet Industries"
   },
   "brand": "Tenet Industries",
   "language": {
@@ -9,54 +9,165 @@
   },
   "nav": {
     "platform": "Platform",
+    "product": "Product",
     "systems": "Systems",
     "doctrine": "Doctrine",
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Minimal scroll reveal demo",
-    "title": "Homepage Main Title",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+    "eyebrow": "Backed by Y Combinator",
+    "title": "Low-cost massproducible strike drones",
+    "copy": "Tenet is a company that designs and manufactures low-cost drones with proprietary software and purpose-built hardware. Every development we make is to reduce the cost of the final product."
   },
   "sections": {
     "section1": {
-      "tag": "Section 01",
-      "title": "Subtitle 1",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+      "tag": "Platform",
+      "title": "FPV Drone",
+      "body": "Propellers: 7 inches. Range: ~20km. Payload: 2kg. Flight time without payload: 30 minutes. Modified ELRS system with an extremely wideband radio that frequency-hops on an encrypted channel. Assembly time under 2 minutes. Almost half the cost of Brave1 drones.",
+      "cta": "Learn more"
     },
     "section2": {
-      "tag": "Section 02",
-      "title": "Subtitle 2",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+      "tag": "Systems",
+      "title": "Purpose-built for the mission",
+      "body": "Design-for-automation means our products are non-complex and fast to manufacture. Proprietary SW platform, the same stack powers future fixed-wings and missiles. Hardware built for the specific mission, e.g. kamikaze. Rapidly scalable to million-unit production for FPV drones."
     },
     "section3": {
-      "tag": "Section 03",
-      "title": "Subtitle 3",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+      "tag": "Doctrine",
+      "title": "Built by people who build things",
+      "body": "Tenet was founded by people with roots in KTH's rocketry association and manufacturing association, where we built drones and rockets. We have experience from both the military, the manufacturing industry, and the consumer electronics sector. Five people on the team with more on the way."
     }
   },
   "media": {
-    "placeholder": "Image Placeholder"
+    "placeholder": "Video"
   },
   "footer": {
-    "heroReveal": "Time reveal in hero",
-    "sectionReveal": "Scroll reveal in sections"
+    "tagline": "Low-cost massproducible strike drones",
+    "docCompany": "Company",
+    "docBacked": "Backed by",
+    "copyright": "© 2026 Tenet Industries"
   },
-  
+  "product": {
+    "meta": {
+      "title": "Product - Tenet Industries"
+    },
+    "hero": {
+      "eyebrow": "Product / FPV drone",
+      "title": "FPV strike drone",
+      "copy": "A low-cost quadcopter platform built around fast assembly, purpose-built hardware, and a proprietary software stack designed to reduce final unit cost.",
+      "productCta": "Product details",
+      "roadmapCta": "Roadmap",
+      "modelLabel": "RAF1 platform",
+      "modelStatus": "Drone exists"
+    },
+    "stats": {
+      "range": {
+        "value": "~20km",
+        "label": "Operational range"
+      },
+      "payload": {
+        "value": "2kg",
+        "label": "Payload"
+      },
+      "flight": {
+        "value": "30min",
+        "label": "Flight time without payload"
+      },
+      "assembly": {
+        "value": "<2min",
+        "label": "Assembly time"
+      }
+    },
+    "productSection": {
+      "label": "Product",
+      "title": "Built for cost, speed, and repeatable production",
+      "copy": "The FPV drone combines simple mechanical assembly with a modified ELRS radio system and mission-specific hardware. The result is a product intended for rapid manufacturing and field-ready deployment."
+    },
+    "specs": {
+      "propellers": {
+        "label": "Propellers",
+        "value": "7 inches"
+      },
+      "range": {
+        "label": "Range",
+        "value": "~20 km"
+      },
+      "payload": {
+        "label": "Payload",
+        "value": "2 kg"
+      },
+      "flight": {
+        "label": "Flight time",
+        "value": "30 min without payload"
+      },
+      "radio": {
+        "label": "Radio system",
+        "value": "Modified encrypted frequency-hopping ELRS"
+      },
+      "cost": {
+        "label": "Cost position",
+        "value": "Almost half the cost of Brave1 drones"
+      }
+    },
+    "capabilities": {
+      "production": {
+        "title": "Production speed",
+        "copy": "Design-for-automation creates non-complex products that are fast to manufacture and assemble with all components included."
+      },
+      "software": {
+        "title": "Modular software",
+        "copy": "A proprietary software platform provides the foundation for the FPV drone and future low-cost fixed-wing and missile systems."
+      },
+      "hardware": {
+        "title": "Purpose-built hardware",
+        "copy": "Hardware is designed around the specific mission profile rather than adapted from a generic platform."
+      },
+      "manufacturing": {
+        "title": "Distributed manufacturing",
+        "copy": "The product is built for dispersed production and rapid scalability toward million-unit FPV drone manufacturing."
+      }
+    },
+    "roadmapSection": {
+      "label": "Roadmap",
+      "title": "From current FPV platform to autonomous swarm systems",
+      "copy": "The roadmap extends the same software foundation across additional airframes and progressively more autonomous mission capability."
+    },
+    "roadmap": {
+      "fpv": {
+        "phase": "Now",
+        "title": "FPV kamikaze",
+        "copy": "Quadcopter drone platform. Drone exists."
+      },
+      "fixed": {
+        "phase": "Next",
+        "title": "Fixed-wing, SIB & Vampire",
+        "copy": "Low-cost drones on the same software platform."
+      },
+      "autonomy": {
+        "phase": "In development",
+        "title": "Autonomy",
+        "copy": "Autonomous navigation, detection, and target seeking."
+      },
+      "swarm": {
+        "phase": "Future",
+        "title": "Swarm",
+        "copy": "Mass-produced drones operating in coordinated swarms."
+      }
+    }
+  },
   "contact": {
     "meta": {
-      "title": "Contact"
+      "title": "Contact - Tenet Industries"
     },
     "hero": {
       "eyebrow": "Transmission channel",
       "title": "Get in contact",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+      "copy": "Reach out to discuss procurement, partnerships, or press inquiries. We will route your message to the correct channel and respond within 24 hours."
     },
     "form": {
       "tag": "Contact form",
       "title": "Send a message",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
-      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. We will route your message to the correct channel.",
+      "copy": "Fill in your details below. All communications are handled through encrypted channels.",
+      "note": "Your message will be routed to the correct channel. We respond within 24 hours on business days.",
       "submit": "Send inquiry",
       "fields": {
         "name": {
@@ -84,15 +195,15 @@
     "details": {
       "tag": "Direct line",
       "title": "Contact details",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "copy": "For direct inquiries, use the channels below. We are based in Stockholm and operate Monday through Friday.",
       "items": {
         "email": {
           "label": "Email",
-          "value": "contact@example.com"
+          "value": "contact@tenetindustries.com"
         },
         "phone": {
           "label": "Phone",
-          "value": "+00 123 456 789"
+          "value": "+46 70 000 00 00"
         },
         "location": {
           "label": "Location",
@@ -106,7 +217,7 @@
         },
         "availability": {
           "label": "Availability",
-          "value": "Mon–Fri"
+          "value": "Mon-Fri"
         },
         "security": {
           "label": "Channel",
@@ -116,4 +227,3 @@
     }
   }
 }
-

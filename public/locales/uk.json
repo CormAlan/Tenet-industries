@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Мінімальна демонстрація Pixel Scroll"
+    "title": "Tenet Industries"
   },
   "brand": "Tenet Industries",
   "language": {
@@ -9,58 +9,170 @@
   },
   "nav": {
     "platform": "Платформа",
+    "product": "Продукт",
     "systems": "Системи",
     "doctrine": "Доктрина",
     "contact": "Контакт"
   },
   "hero": {
-    "eyebrow": "Мінімальна демонстрація scroll reveal",
-    "title": "заголовок домашньої сторінки",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+    "eyebrow": "Підтримано Y Combinator",
+    "title": "Низьковартісні масові ударні дрони",
+    "copy": "Tenet - компанія, що проектує та виробляє низьковартісні дрони з власним програмним забезпеченням і апаратною платформою, розробленою під конкретні завдання. Кожне рішення спрямоване на зниження кінцевої вартості продукту."
   },
   "sections": {
     "section1": {
-      "tag": "Секція 01",
-      "title": "підзаголовок 1",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+      "tag": "Платформа",
+      "title": "FPV Дрон",
+      "body": "Пропелери: 7 дюймів. Дальність: ~20 км. Корисне навантаження: 2 кг. Час польоту без навантаження: 30 хвилин. Модифікована система ELRS з надширокосмуговим радіо, що стрибає по частотах у зашифрованому каналі. Час збирання менше 2 хвилин. Майже вдвічі дешевше за дрони Brave1.",
+      "cta": "Дізнатися більше"
     },
     "section2": {
-      "tag": "Секція 02",
-      "title": "підзаголовок 2",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+      "tag": "Системи",
+      "title": "Розроблено під завдання",
+      "body": "Підхід design-for-automation забезпечує прості у виробництві конструкції. Власна програмна платформа, та сама база для майбутніх дронів з нерухомим крилом і ракет. Апаратна частина побудована під конкретну місію, наприклад камікадзе. Можлива швидка масштабізація до мільйонного виробництва."
     },
     "section3": {
-      "tag": "Секція 03",
-      "title": "підзаголовок 3",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+      "tag": "Доктрина",
+      "title": "Побудовано людьми, які будують",
+      "body": "Tenet заснований людьми з коренями в ракетному та виробничому товаристві KTH, де ми будували дрони та ракети. Маємо досвід у військовій сфері, виробничій промисловості та споживчій електроніці. П'ять людей у команді, і незабаром стане більше."
     }
   },
   "media": {
-    "placeholder": "Заповнювач зображення"
+    "placeholder": "Відео"
   },
   "footer": {
-    "heroReveal": "Часове відкриття в hero-блоці",
-    "sectionReveal": "Відкриття при прокрутці в секціях"
+    "tagline": "Низьковартісні масові ударні дрони",
+    "docCompany": "Компанія",
+    "docBacked": "Підтримано",
+    "copyright": "© 2026 Tenet Industries"
+  },
+  "product": {
+    "meta": {
+      "title": "Продукт - Tenet Industries"
+    },
+    "hero": {
+      "eyebrow": "Продукт / FPV-дрон",
+      "title": "FPV ударний дрон",
+      "copy": "Низьковартісна квадрокоптерна платформа, побудована навколо швидкого складання, спеціалізованої апаратної частини та власного програмного стеку для зниження кінцевої вартості одиниці.",
+      "productCta": "Деталі продукту",
+      "roadmapCta": "Дорожня карта",
+      "modelLabel": "Платформа RAF1",
+      "modelStatus": "Дрон існує"
+    },
+    "stats": {
+      "range": {
+        "value": "~20км",
+        "label": "Операційна дальність"
+      },
+      "payload": {
+        "value": "2кг",
+        "label": "Корисне навантаження"
+      },
+      "flight": {
+        "value": "30хв",
+        "label": "Час польоту без навантаження"
+      },
+      "assembly": {
+        "value": "<2хв",
+        "label": "Час складання"
+      }
+    },
+    "productSection": {
+      "label": "Продукт",
+      "title": "Створено для вартості, швидкості та повторюваного виробництва",
+      "copy": "FPV-дрон поєднує просте механічне складання з модифікованою радіосистемою ELRS та апаратною частиною під конкретну місію. Результат: продукт для швидкого виробництва та польового застосування."
+    },
+    "specs": {
+      "propellers": {
+        "label": "Пропелери",
+        "value": "7 дюймів"
+      },
+      "range": {
+        "label": "Дальність",
+        "value": "~20 км"
+      },
+      "payload": {
+        "label": "Навантаження",
+        "value": "2 кг"
+      },
+      "flight": {
+        "label": "Час польоту",
+        "value": "30 хв без навантаження"
+      },
+      "radio": {
+        "label": "Радіосистема",
+        "value": "Модифікована зашифрована частотно-стрибкова ELRS"
+      },
+      "cost": {
+        "label": "Вартісна позиція",
+        "value": "Майже вдвічі дешевше за дрони Brave1"
+      }
+    },
+    "capabilities": {
+      "production": {
+        "title": "Швидкість виробництва",
+        "copy": "Design-for-automation створює прості продукти, які швидко виробляти та складати з усіма компонентами."
+      },
+      "software": {
+        "title": "Модульне ПЗ",
+        "copy": "Власна програмна платформа є основою для FPV-дрона та майбутніх низьковартісних fixed-wing і ракетних систем."
+      },
+      "hardware": {
+        "title": "Апаратна частина під місію",
+        "copy": "Апаратна частина проєктується навколо конкретного профілю місії, а не адаптується з універсальної платформи."
+      },
+      "manufacturing": {
+        "title": "Розподілене виробництво",
+        "copy": "Продукт створений для розосередженого виробництва та швидкого масштабування до мільйонного виробництва FPV-дронів."
+      }
+    },
+    "roadmapSection": {
+      "label": "Дорожня карта",
+      "title": "Від поточної FPV-платформи до автономних ройових систем",
+      "copy": "Дорожня карта розширює ту саму програмну основу на додаткові літальні платформи та поступово більш автономні місійні можливості."
+    },
+    "roadmap": {
+      "fpv": {
+        "phase": "Зараз",
+        "title": "FPV kamikaze",
+        "copy": "Квадрокоптерна платформа. Дрон існує."
+      },
+      "fixed": {
+        "phase": "Далі",
+        "title": "Fixed-wing, SIB & Vampire",
+        "copy": "Низьковартісні дрони на тій самій програмній платформі."
+      },
+      "autonomy": {
+        "phase": "У розробці",
+        "title": "Автономність",
+        "copy": "Автономна навігація, виявлення та пошук цілі."
+      },
+      "swarm": {
+        "phase": "Майбутнє",
+        "title": "Рій",
+        "copy": "Масово вироблені дрони, що працюють у координованих роях."
+      }
+    }
   },
   "contact": {
     "meta": {
-      "title": "Контакт"
+      "title": "Контакт - Tenet Industries"
     },
     "hero": {
-      "eyebrow": "Канал передачі",
-      "title": "Зв’яжіться з нами",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+      "eyebrow": "Канал зв'язку",
+      "title": "Зв'яжіться з нами",
+      "copy": "Зв'яжіться з нами для обговорення закупівель, партнерства або запитів від преси. Ваше повідомлення буде скеровано до потрібного каналу, і ми відповімо протягом 24 годин."
     },
     "form": {
       "tag": "Контактна форма",
       "title": "Надіслати повідомлення",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
-      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ми спрямуємо ваше повідомлення до потрібного каналу.",
+      "copy": "Заповніть форму нижче. Вся комунікація здійснюється через зашифровані канали.",
+      "note": "Ваше повідомлення буде скеровано до потрібного каналу. Відповідаємо протягом 24 годин у робочі дні.",
       "submit": "Надіслати запит",
       "fields": {
         "name": {
-          "label": "Ім’я",
-          "placeholder": "Ваше ім’я"
+          "label": "Ім'я",
+          "placeholder": "Ваше ім'я"
         },
         "email": {
           "label": "Електронна пошта",
@@ -83,15 +195,15 @@
     "details": {
       "tag": "Пряма лінія",
       "title": "Контактні дані",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "copy": "Для прямих запитів використовуйте канали нижче. Ми знаходимося в Стокгольмі та працюємо з понеділка по п'ятницю.",
       "items": {
         "email": {
           "label": "Електронна пошта",
-          "value": "contact@example.com"
+          "value": "contact@tenetindustries.com"
         },
         "phone": {
           "label": "Телефон",
-          "value": "+00 123 456 789"
+          "value": "+46 70 000 00 00"
         },
         "location": {
           "label": "Місцезнаходження",
@@ -105,7 +217,7 @@
         },
         "availability": {
           "label": "Доступність",
-          "value": "Пн–Пт"
+          "value": "Пн-Пт"
         },
         "security": {
           "label": "Канал",

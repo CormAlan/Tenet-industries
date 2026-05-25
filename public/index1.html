@@ -70,11 +70,14 @@
     }
 
     .brand {
-      font-family: var(--font-head);
-      font-size: 0.94rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
       white-space: nowrap;
+    }
+
+    .brand__logo {
+      height: 34px;
+      width: auto;
     }
 
     .topbar__right {
@@ -149,7 +152,7 @@
     }
 
     .hero {
-      min-height: calc(80vh - 68px);
+      min-height: calc(70vh - 68px);
       display: flex;
       align-items: center;
       padding: 48px 0 24px;
@@ -158,6 +161,7 @@
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
+      overflow: hidden;
     }
 
     .hero::before {
@@ -165,10 +169,10 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(to right, rgba(238, 245, 30, 0.42) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(183, 213, 9, 0.24) 1px, transparent 1px);
+        linear-gradient(to right, rgba(238, 245, 30, 0.26) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(183, 213, 9, 0.16) 1px, transparent 1px);
       background-size: 28px 28px;
-      opacity: 0.72;
+      opacity: 0.48;
       pointer-events: none;
       mask-image: radial-gradient(circle at 28% 34%, black 52%, transparent 100%);
     }
@@ -182,22 +186,20 @@
         linear-gradient(
           90deg,
           transparent 0%,
-          rgba(220, 255, 80, 0.00) 44%,
-          rgba(220, 255, 80, 0.05) 48%,
-          rgba(220, 255, 80, 0.12) 50%,
-          rgba(220, 255, 80, 0.05) 52%,
-          rgba(220, 255, 80, 0.00) 56%,
+          rgba(220, 255, 80, 0.00) 40%,
+          rgba(220, 255, 80, 0.025) 46%,
+          rgba(220, 255, 80, 0.09) 50%,
+          rgba(220, 255, 80, 0.025) 54%,
+          rgba(220, 255, 80, 0.00) 60%,
           transparent 100%
         );
-      animation: heroScan 10s linear infinite;
+      opacity: 0.78;
+      animation: heroScan 16s ease-in-out infinite alternate;
+      animation-delay: -0.5s;
     }
     @keyframes heroScan {
-      from {
-        transform: translateX(-35%);
-      }
-      to {
-        transform: translateX(35%);
-      }
+      from { transform: translateX(-130%); }
+      to   { transform: translateX(130%); }
     }
 
     .hero__inner {
@@ -209,9 +211,9 @@
     }
     .eyebrow {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
@@ -225,7 +227,7 @@
     }
 
     .hero-title {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       max-width: 1100px;
     }
 
@@ -234,24 +236,31 @@
     }
 
     .sections {
-      padding: 24px 0 120px;
+      padding: 34px 0 128px;
     }
 
     .section {
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(260px, 40vw);
-      gap: 72px;
+      gap: clamp(56px, 6vw, 92px);
       align-items: center;
-      padding: 56px 0;
+      padding: 70px 0;
       overflow: hidden;
+      scroll-margin-top: 92px;
     }
     .section__model {
-      width: 100%;
-      height: 100%;
-      min-height: 360px;
+      width: 126%;
+      height: 126%;
+      min-height: 0;
       display: block;
       background: transparent;
+    }
+
+    #section-1 .section__media {
+      width: min(100%, 520px);
+      min-height: 300px;
+      justify-self: end;
     }
 
     .section__media-label--overlay {
@@ -279,6 +288,35 @@
 
     .section:nth-of-type(2)::before { opacity: 0.28; }
 
+    #section-2 {
+      width: 100vw;
+      left: 50%;
+      margin: 24px -50vw 32px;
+      padding: 82px max(32px, calc((100vw - 1500px) / 2 + 32px));
+      gap: clamp(52px, 6vw, 108px);
+      background:
+        radial-gradient(circle at 22% 48%, rgba(217, 232, 18, 0.08), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015) 48%, rgba(0, 0, 0, 0.24));
+      border-top: 1px solid rgba(255, 255, 255, 0.085);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        inset 0 -40px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    #section-2 .section__media {
+      justify-self: start;
+      border-color: rgba(217, 232, 18, 0.18);
+      background-color: rgba(0, 0, 0, 0.22);
+      box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.38),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+    }
+
+    #section-2 .section__text {
+      max-width: 820px;
+    }
+
     .section__text,
     .section__media {
       position: relative;
@@ -288,42 +326,82 @@
 
     .section__tag {
       display: block;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
     .section__title {
-      margin-bottom: 18px;
-      max-width: 780px;
+      margin-bottom: 14px;
+      max-width: 720px;
     }
 
     .section__body {
-      max-width: 760px;
+      max-width: 700px;
+    }
+
+    .section-actions {
+      display: flex;
+      margin-top: 24px;
+    }
+
+    .section-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 11px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: rgba(255,255,255,0.035);
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .section-link:hover {
+      border-color: rgba(217, 232, 18, 0.46);
+      background: rgba(217, 232, 18, 0.075);
     }
 
     .section__media {
-      min-height: 360px;
+      min-height: 320px;
+      aspect-ratio: 1.28 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(217, 232, 18, 0.16);
       background-image:
-        linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.055) 1px, transparent 1px);
       background-size: 32px 32px;
-      background-color: rgba(255,255,255,0.01);
+      background-color: rgba(0, 0, 0, 0.18);
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.028);
       overflow: hidden;
     }
 
     .section__video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+      background: #000;
+    }
+
+    .section__media--video {
+      display: block;
+      min-height: 0;
+      aspect-ratio: auto;
+    }
+
+    .section__media--video .section__video {
+      height: auto;
     }
 
     .section__media-label {
@@ -344,13 +422,96 @@
     .footer__inner {
       width: var(--page);
       margin: 0 auto;
-      min-height: 88px;
+      padding: 52px 0 32px;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: start;
+    }
+
+    .footer__brand-col {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer__logo-link {
+      display: inline-flex;
+    }
+
+    .footer__logo {
+      height: 26px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer__logo-link:hover .footer__logo {
+      opacity: 1;
+    }
+
+    .footer__tagline {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 34ch;
+      line-height: 1.75;
+    }
+
+    .footer__nav-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer__nav-col a:hover {
+      color: var(--text);
+    }
+
+    .footer__doc-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+    }
+
+    .footer__doc-row {
+      display: flex;
       justify-content: space-between;
       gap: 24px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-soft);
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .footer__doc-row span:first-child {
+      color: var(--muted);
+    }
+
+    .footer__doc-row span:last-child {
+      color: var(--text);
+      text-align: right;
+    }
+
+    .footer__bottom {
+      padding-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
@@ -372,15 +533,22 @@
         gap: 32px;
       }
 
+      #section-2 {
+        padding-block: 68px;
+        gap: 38px;
+      }
+
       .hero {
         min-height: 82vh;
       }
 
-      .footer__inner {
-        min-height: auto;
-        padding: 28px 0;
-        flex-direction: column;
-        align-items: flex-start;
+      .footer__top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer__doc-col {
+        min-width: 0;
       }
     }
 
@@ -412,24 +580,193 @@
 
       .section {
         padding: 56px 0;
+        scroll-margin-top: 180px;
       }
 
       .section__media {
         min-height: 240px;
       }
+
+      #section-1 .section__media {
+        width: 100%;
+        min-height: 260px;
+      }
+
+      #section-2 {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        padding: 54px 12px;
+      }
+
+      #section-2 .section__media {
+        justify-self: center;
+        width: 100%;
+      }
+    }
+    /* ── scanlines ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9000;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 3px,
+        rgba(0, 0, 0, 0.014) 3px,
+        rgba(0, 0, 0, 0.014) 4px
+      );
+    }
+
+    /* ── film grain ── */
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9001;
+      opacity: 0.032;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+      animation: grainShift 0.45s steps(4) infinite;
+    }
+
+    @keyframes grainShift {
+      0%   { background-position: 0 0; }
+      25%  { background-position: -80px 42px; }
+      50%  { background-position: 55px -68px; }
+      75%  { background-position: -28px 62px; }
+    }
+
+    /* ── HUD corners ── */
+    .hud {
+      position: absolute;
+      inset: 28px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hud__corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+    }
+
+    .hud__corner--tl {
+      top: 0; left: 0;
+      border-top: 1px solid rgba(217, 232, 18, 0.24);
+      border-left: 1px solid rgba(217, 232, 18, 0.24);
+    }
+
+    .hud__corner--tr {
+      top: 0; right: 0;
+      border-top: 1px solid rgba(217, 232, 18, 0.24);
+      border-right: 1px solid rgba(217, 232, 18, 0.24);
+    }
+
+    .hud__corner--bl {
+      bottom: 0; left: 0;
+      border-bottom: 1px solid rgba(217, 232, 18, 0.24);
+      border-left: 1px solid rgba(217, 232, 18, 0.24);
+    }
+
+    .hud__corner--br {
+      bottom: 0; right: 0;
+      border-bottom: 1px solid rgba(217, 232, 18, 0.24);
+      border-right: 1px solid rgba(217, 232, 18, 0.24);
+    }
+
+    .hud__status {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: rgba(217, 232, 18, 0.42);
+    }
+
+    .hud__dot {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(217, 232, 18, 0.95);
+      animation: hudPulse 2.2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes hudPulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 5px rgba(217, 232, 18, 0.7); }
+      50%       { opacity: 0.15; box-shadow: none; }
+    }
+
+    .hud__coords {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.16);
+    }
+
+    /* ── radar trail (option 4: lagging CSS layer) ── */
+    .hero__trail {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(220, 255, 80, 0.00) 30%,
+        rgba(220, 255, 80, 0.012) 39%,
+        rgba(220, 255, 80, 0.035) 50%,
+        rgba(220, 255, 80, 0.012) 61%,
+        rgba(220, 255, 80, 0.00) 70%,
+        transparent 100%
+      );
+      opacity: 0.72;
+      animation: heroScan 16s ease-in-out infinite alternate;
+      /* no delay → always 0.5s behind the ::after beam */
+    }
+
+    /* ── radar canvas (option 5: arc + phosphor persistence) ── */
+    .hero__radar {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: screen;
+      opacity: 0.48;
+    }
+
+    @media (max-width: 680px) {
+      .hud { inset: 16px; }
+      .hud__coords { display: none; }
     }
   </style>
-  <link rel="preload" href="/dronevideo1.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="/tenet_website.mp4" as="video" type="video/mp4">
 </head>
 <body>
   <div class="page">
     <div class="topbar">
       <div class="topbar__inner">
-        <a href="#top" class="brand" data-i18n="brand"></a>
+        <a href="/" class="brand" aria-label="Tenet Industries">
+            <img src="/src/assets/logo.svg" alt="Tenet Industries" class="brand__logo" />
+          </a>
 
         <div class="topbar__right">
           <nav class="nav">
             <a href="#section-1" data-i18n="nav.platform"></a>
+            <a href="/product" data-i18n="nav.product"></a>
             <a href="#section-2" data-i18n="nav.systems"></a>
             <a href="#section-3" data-i18n="nav.doctrine"></a>
             <a href="/contact" data-i18n="nav.contact"></a>
@@ -456,13 +793,25 @@
 
     <div class="page-width">
       <header class="hero" id="top">
+        <canvas class="hero__radar" aria-hidden="true"></canvas>
+        <div class="hero__trail" aria-hidden="true"></div>
+        <div class="hud" aria-hidden="true">
+          <span class="hud__corner hud__corner--tl"></span>
+          <span class="hud__corner hud__corner--tr"></span>
+          <span class="hud__corner hud__corner--bl"></span>
+          <span class="hud__corner hud__corner--br"></span>
+          <span class="hud__status">
+
+          </span>
+          <span class="hud__coords">59°19'N · 18°04'E · ALT 0042M  </span>
+        </div>
         <div class="hero__inner">
           <span class="eyebrow" data-i18n="hero.eyebrow"></span>
 
           <canvas
             class="text-canvas hero-title pixel-reveal"
             data-i18n="hero.title"
-            data-font-size="132"
+            data-font-size="108"
             data-max-width="1100"
             data-reveal="time"
             data-duration="1000"
@@ -471,7 +820,7 @@
           <canvas
             class="text-canvas hero-copy pixel-reveal"
             data-i18n="hero.copy"
-            data-font-size="28"
+            data-font-size="24"
             data-max-width="820"
             data-weight="500"
             data-line-height="1.6"
@@ -488,25 +837,28 @@
             <canvas
               class="text-canvas section__title pixel-reveal"
               data-i18n="sections.section1.title"
-              data-font-size="64"
-              data-max-width="780"
+              data-font-size="58"
+              data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
               data-i18n="sections.section1.body"
-              data-font-size="24"
-              data-max-width="760"
+              data-font-size="22"
+              data-max-width="700"
               data-weight="500"
-              data-line-height="1.8"
+              data-line-height="1.65"
               data-reveal="scroll"
             ></canvas>
+            <div class="section-actions">
+              <a class="section-link" href="/product" data-i18n="sections.section1.cta"></a>
+            </div>
           </div>
           <div class="section__media">
             <model-viewer
               class="section__model"
-              src="/models/drone.glb"
-              alt="3D drone model"
+              src="/models/RAF1.glb"
+              alt="RAF1 drone model"
               auto-rotate
               rotation-per-second="4deg"
               camera-controls
@@ -515,6 +867,7 @@
               shadow-intensity="1"
               exposure="1"
               environment-image="neutral"
+              field-of-view="22deg"
             ></model-viewer>
 
             <div class="section__media-label section__media-label--overlay">3D MODEL</div>
@@ -522,10 +875,10 @@
         </section>
 
         <section class="section section--reverse" id="section-2">
-          <div class="section__media">
+          <div class="section__media section__media--video">
             <video
               class="section__video"
-              src="/dronevideo1.mp4"
+              src="/tenet_website.mp4"
               autoplay
               muted
               loop
@@ -538,17 +891,17 @@
             <canvas
               class="text-canvas section__title pixel-reveal"
               data-i18n="sections.section2.title"
-              data-font-size="64"
-              data-max-width="780"
+              data-font-size="58"
+              data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
               data-i18n="sections.section2.body"
-              data-font-size="24"
-              data-max-width="760"
+              data-font-size="22"
+              data-max-width="700"
               data-weight="500"
-              data-line-height="1.8"
+              data-line-height="1.65"
               data-reveal="scroll"
             ></canvas>
           </div>
@@ -560,22 +913,30 @@
             <canvas
               class="text-canvas section__title pixel-reveal"
               data-i18n="sections.section3.title"
-              data-font-size="64"
-              data-max-width="780"
+              data-font-size="58"
+              data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
               data-i18n="sections.section3.body"
-              data-font-size="24"
-              data-max-width="760"
+              data-font-size="22"
+              data-max-width="700"
               data-weight="500"
-              data-line-height="1.8"
+              data-line-height="1.65"
               data-reveal="scroll"
             ></canvas>
           </div>
-          <div class="section__media">
-            <div class="section__media-label" data-i18n="media.placeholder"></div>
+          <div class="section__media section__media--video">
+            <video
+              class="section__video"
+              src="/tenetlrs1.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
           </div>
         </section>
       </main>
@@ -583,11 +944,39 @@
 
     <footer class="footer">
       <div class="footer__inner">
-        <span data-i18n="footer.heroReveal"></span>
-        <span data-i18n="footer.sectionReveal"></span>
+        <div class="footer__top">
+          <div class="footer__brand-col">
+            <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
+              <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
+            </a>
+            <p class="footer__tagline" data-i18n="footer.tagline"></p>
+          </div>
+          <nav class="footer__nav-col">
+            <a href="#section-1" data-i18n="nav.platform"></a>
+            <a href="/product" data-i18n="nav.product"></a>
+            <a href="#section-2" data-i18n="nav.systems"></a>
+            <a href="#section-3" data-i18n="nav.doctrine"></a>
+            <a href="/contact" data-i18n="nav.contact"></a>
+          </nav>
+          <div class="footer__doc-col">
+            <div class="footer__doc-row">
+              <span data-i18n="footer.docCompany"></span>
+              <span>Tenet Industries</span>
+            </div>
+            <div class="footer__doc-row">
+              <span data-i18n="footer.docBacked"></span>
+              <span>Y Combinator</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span data-i18n="footer.copyright"></span>
+        </div>
       </div>
     </footer>
   </div>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
 
   <script>
     const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
@@ -665,7 +1054,7 @@
           .trim();
 
         this.initialPixelSize =
-          this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 24 : 16;
+          (this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 24 : 16) * (window.devicePixelRatio || 1);
 
         this.pixelSize = this.initialPixelSize;
         this.targetPixelSize = this.initialPixelSize;
@@ -728,27 +1117,30 @@
           metrics.actualBoundingBoxDescent || this.fontSize * 0.2
         );
         const lineBox = Math.ceil((ascent + descent) * this.lineHeight);
-        const height = Math.max(40, lines.length * lineBox + this.padding * 2);
-        const width = innerWidth;
+        const cssHeight = Math.max(40, lines.length * lineBox + this.padding * 2);
+        const cssWidth = innerWidth;
+        const dpr = window.devicePixelRatio || 1;
+        const physW = Math.round(cssWidth * dpr);
+        const physH = Math.round(cssHeight * dpr);
 
-        this.canvas.width = width;
-        this.canvas.height = height;
-        this.canvas.style.width = `${width}px`;
-        this.canvas.style.height = `${height}px`;
+        this.canvas.width = physW;
+        this.canvas.height = physH;
+        this.canvas.style.width = `${cssWidth}px`;
+        this.canvas.style.height = `${cssHeight}px`;
 
-        this.offscreen.width = width;
-        this.offscreen.height = height;
+        this.offscreen.width = physW;
+        this.offscreen.height = physH;
 
         const ctx = this.offCtx;
-        ctx.clearRect(0, 0, width, height);
+        ctx.clearRect(0, 0, physW, physH);
         ctx.fillStyle = this.color;
         ctx.textBaseline = 'alphabetic';
         ctx.textAlign = 'left';
-        ctx.font = `${this.fontWeight} ${this.fontSize}px ${fontFamily}`;
+        ctx.font = `${this.fontWeight} ${this.fontSize * dpr}px ${fontFamily}`;
 
         lines.forEach((line, index) => {
-          const y = this.padding + ascent + index * lineBox;
-          ctx.fillText(line, this.padding, y);
+          const y = Math.round((this.padding + ascent + index * lineBox) * dpr);
+          ctx.fillText(line, Math.round(this.padding * dpr), y);
         });
 
         this.draw();
@@ -880,6 +1272,96 @@
         await setLanguage(button.dataset.lang);
       });
     });
+
+    function initRadar() {
+      const hero = document.querySelector('.hero');
+      const canvas = hero && hero.querySelector('.hero__radar');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const startTime = performance.now();
+      let prevAngle = null;
+
+      function resize() {
+        const r = hero.getBoundingClientRect();
+        canvas.width  = Math.round(r.width  * dpr);
+        canvas.height = Math.round(r.height * dpr);
+        canvas.style.width  = r.width  + 'px';
+        canvas.style.height = r.height + 'px';
+        prevAngle = null;
+      }
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 80);
+      });
+      resize();
+
+      function tick(now) {
+        const w = canvas.width;
+        const h = canvas.height;
+        const t = (now - startTime) / 1000;
+
+        // Phosphor decay: erase a fraction of existing brightness each frame
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = 'rgba(0,0,0,0.028)';
+        ctx.fillRect(0, 0, w, h);
+        ctx.globalCompositeOperation = 'source-over';
+
+        // Angle: starts pointing straight up (-π/2), sweeps to straight down (+π/2)
+        const angle = -Math.cos((t * Math.PI) / 13) * (Math.PI / 2);
+
+        // Origin: off-screen left, vertically centred
+        const ox = -w * 0.18;
+        const oy =  h * 0.5;
+        // Radius reaches all corners of the canvas
+        const len = Math.hypot(w - ox, Math.max(oy, h - oy)) * 1.1;
+
+        if (prevAngle !== null) {
+          const a0 = Math.min(prevAngle, angle);
+          const a1 = Math.max(prevAngle, angle);
+
+          // Sector fill for the swept wedge, radial gradient from origin
+          const grad = ctx.createRadialGradient(ox, oy, 0, ox, oy, len);
+          grad.addColorStop(0,    'rgba(180,255,60,0)');
+          grad.addColorStop(0.25, 'rgba(180,255,60,0.04)');
+          grad.addColorStop(0.75, 'rgba(180,255,60,0.10)');
+          grad.addColorStop(1,    'rgba(180,255,60,0.14)');
+
+          ctx.beginPath();
+          ctx.moveTo(ox, oy);
+          ctx.arc(ox, oy, len, a0, a1, false);
+          ctx.closePath();
+          ctx.fillStyle = grad;
+          ctx.fill();
+        }
+
+        // Leading-edge bright line at current angle only
+        const ex = ox + Math.cos(angle) * len;
+        const ey = oy + Math.sin(angle) * len;
+        const edge = ctx.createLinearGradient(ox, oy, ex, ey);
+        edge.addColorStop(0,    'rgba(220,255,80,0)');
+        edge.addColorStop(0.3,  'rgba(220,255,80,0.15)');
+        edge.addColorStop(0.85, 'rgba(220,255,80,0.55)');
+        edge.addColorStop(1,    'rgba(220,255,80,0.80)');
+        ctx.beginPath();
+        ctx.moveTo(ox, oy);
+        ctx.lineTo(ex, ey);
+        ctx.strokeStyle = edge;
+        ctx.lineWidth = 1.5 * dpr;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        prevAngle = angle;
+        requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    initRadar();
 
     setLanguage(getInitialLanguage())
       .then(() => {
