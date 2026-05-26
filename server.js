@@ -12,35 +12,58 @@ const mimeTypes = {
   ".jpg": "image/jpeg",
   ".svg": "image/svg+xml",
   ".json": "application/json; charset=utf-8",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
+  ".glb": "model/gltf-binary",
 };
 
-function serveFile(filePath, res) {
-  fs.readFile(filePath, (err, data) => {
+function serveFile(filePath, req, res) {
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = mimeTypes[ext] || "application/octet-stream";
+
+  fs.stat(filePath, (err, stats) => {
     if (err) {
       res.writeHead(404);
       res.end("Not found");
       return;
     }
 
-    const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, {
-      "Content-Type": mimeTypes[ext] || "application/octet-stream",
-    });
-    res.end(data);
+    const fileSize = stats.size;
+    const range = req.headers.range;
+
+    if (range) {
+      const [startStr, endStr] = range.replace(/bytes=/, "").split("-");
+      const start = parseInt(startStr, 10);
+      const end = endStr ? parseInt(endStr, 10) : fileSize - 1;
+      const chunkSize = end - start + 1;
+
+      res.writeHead(206, {
+        "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+        "Accept-Ranges": "bytes",
+        "Content-Length": chunkSize,
+        "Content-Type": contentType,
+      });
+      fs.createReadStream(filePath, { start, end }).pipe(res);
+    } else {
+      res.writeHead(200, {
+        "Content-Length": fileSize,
+        "Content-Type": contentType,
+        "Accept-Ranges": "bytes",
+      });
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 }
 
 const server = http.createServer((req, res) => {
   let urlPath = req.url.split("?")[0];
 
-  // Default route
   if (urlPath === "/") {
     urlPath = "/index1.html";
   }
 
   let filePath = path.join(publicDir, urlPath);
 
-  // Prevent path traversal
   if (!filePath.startsWith(publicDir)) {
     res.writeHead(403);
     res.end("Forbidden");
@@ -49,20 +72,18 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (!err && stats.isDirectory()) {
-      // If it's a folder → serve index.html inside it
       const indexPath = path.join(filePath, "index.html");
-      return serveFile(indexPath, res);
+      return serveFile(indexPath, req, res);
     }
 
     if (!err && stats.isFile()) {
-      return serveFile(filePath, res);
+      return serveFile(filePath, req, res);
     }
 
-    // Try adding .html automatically (optional nice feature)
     const htmlPath = filePath + ".html";
     fs.stat(htmlPath, (err2, stats2) => {
       if (!err2 && stats2.isFile()) {
-        return serveFile(htmlPath, res);
+        return serveFile(htmlPath, req, res);
       }
 
       res.writeHead(404);

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Minimal Pixel Scroll Demo"
+    "title": "Tenet Industries"
   },
   "brand": "Tenet Industries",
   "language": {
@@ -9,53 +9,165 @@
   },
   "nav": {
     "platform": "Plattform",
+    "product": "Produkt",
     "systems": "System",
     "doctrine": "Doktrin",
     "contact": "Kontakt"
   },
   "hero": {
-    "eyebrow": "Minimal demo för scroll reveal",
-    "title": "Hemsida titel",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, sapien a gravida convallis, velit lorem porta nibh, sed tincidunt erat risus in massa."
+    "eyebrow": "Backed by Y Combinator",
+    "title": "Lågkostnads massproducerbara kamikazedrönare",
+    "copy": "Tenet är ett företag som designar och tillverkar lågkostnads drönare med egenutvecklad mjukvara och purpose-built hårdvara. Varje utveckling gör vi för att sänka kostnaden på slutprodukten."
   },
   "sections": {
     "section1": {
-      "tag": "Sektion 01",
-      "title": "Mindre titel 1",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, lacus quis vestibulum dictum, nunc erat luctus nibh, sit amet faucibus purus sapien vitae ligula. Sed volutpat ex et sem blandit, ut blandit lectus pulvinar. Integer vulputate, lectus at dictum maximus, arcu lacus interdum lorem, eget accumsan purus augue et nibh."
+      "tag": "Plattform",
+      "title": "FPV Drönare",
+      "body": "Propellrar: 7 tum. Räckvidd: ~20km. Nyttolast: 2kg. Flygtid utan last: 30 minuter. Modifierad ELRS med extremt bredbandig radio som frekvenshoppar krypterat. Monteringstid under 2 minuter. Pris: 1 500 till 3 000 SEK, nästan hälften av Brave1-drönare.",
+      "cta": "Läs mer"
     },
     "section2": {
-      "tag": "Sektion 02",
-      "title": "Mindre titel 2",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida risus a luctus efficitur. Duis pretium, urna sed hendrerit cursus, velit sapien faucibus velit, eget mattis nunc elit vitae ipsum. Maecenas tristique eleifend suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; suspendisse viverra commodo massa."
+      "tag": "System",
+      "title": "Purpose-built för uppdraget",
+      "body": "Design-for-automation innebär att våra produkter är okomplexa och snabba att tillverka. Egenutvecklad SW-plattform, samma stack driver framtida fixed-wings och missiler. Hårdvara byggd för det specifika uppdraget, t.ex. kamikaze. Snabbt skalbar till miljonproduktion för FPV-drönaren."
     },
     "section3": {
-      "tag": "Sektion 03",
-      "title": "Mindre titel 3",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac leo ut neque vestibulum faucibus. Nulla ut enim id lectus congue vulputate. Praesent ut nibh nec magna aliquet feugiat. Duis dapibus, est ac viverra vehicula, ligula sapien sollicitudin libero, eget aliquam mauris mauris ut risus. Donec sed urna sit amet velit tempus aliquet."
+      "tag": "Doktrin",
+      "title": "Byggd av folk som bygger saker",
+      "body": "Tenet grundades av personer med rötter från KTHs rymdraketsförening och tillverkningsförening där vi byggt drönare och raketer. Vi har erfarenhet från både militären, tillverkningsindustrin och konsumentelektronikbranschen. Fem personer i teamet med fler påväg in."
     }
   },
   "media": {
-    "placeholder": "Bildplats"
+    "placeholder": "Video"
   },
   "footer": {
-    "heroReveal": "Tidsbaserad reveal i hero",
-    "sectionReveal": "Scroll reveal i sektioner"
+    "tagline": "Lågkostnads massproducerbara kamikazedrönare",
+    "docCompany": "Företag",
+    "docBacked": "Backed by",
+    "copyright": "© 2026 Tenet Industries"
+  },
+  "product": {
+    "meta": {
+      "title": "Produkt - Tenet Industries"
+    },
+    "hero": {
+      "eyebrow": "Produkt / FPV-drönare",
+      "title": "FPV-stridsdrönare",
+      "copy": "En lågkostnads quadcopterplattform byggd kring snabb montering, uppdragsspecifik hårdvara och en egenutvecklad mjukvarustack som sänker slutkostnaden.",
+      "productCta": "Produktdetaljer",
+      "roadmapCta": "Roadmap",
+      "modelLabel": "RAF1-plattform",
+      "modelStatus": "Drönare finns"
+    },
+    "stats": {
+      "range": {
+        "value": "~20km",
+        "label": "Operativ räckvidd"
+      },
+      "payload": {
+        "value": "2kg",
+        "label": "Nyttolast"
+      },
+      "flight": {
+        "value": "30min",
+        "label": "Flygtid utan last"
+      },
+      "assembly": {
+        "value": "<2min",
+        "label": "Monteringstid"
+      }
+    },
+    "productSection": {
+      "label": "Produkt",
+      "title": "Byggd för kostnad, hastighet och repeterbar produktion",
+      "copy": "FPV-drönaren kombinerar enkel mekanisk montering med ett modifierat ELRS-radiosystem och uppdragsspecifik hårdvara. Resultatet är en produkt för snabb tillverkning och fältklar användning."
+    },
+    "specs": {
+      "propellers": {
+        "label": "Propellrar",
+        "value": "7 tum"
+      },
+      "range": {
+        "label": "Räckvidd",
+        "value": "~20 km"
+      },
+      "payload": {
+        "label": "Nyttolast",
+        "value": "2 kg"
+      },
+      "flight": {
+        "label": "Flygtid",
+        "value": "30 min utan last"
+      },
+      "radio": {
+        "label": "Radiosystem",
+        "value": "Modifierad krypterad frekvenshoppande ELRS"
+      },
+      "cost": {
+        "label": "Kostnadsposition",
+        "value": "Nästan hälften av kostnaden för Brave1-drönare"
+      }
+    },
+    "capabilities": {
+      "production": {
+        "title": "Produktionshastighet",
+        "copy": "Design-for-automation skapar okomplexa produkter som är snabba att tillverka och montera med alla komponenter inkluderade."
+      },
+      "software": {
+        "title": "Modulär mjukvara",
+        "copy": "En egenutvecklad mjukvaruplattform ligger till grund för FPV-drönaren och framtida lågkostnads fixed-wing- och missilsystem."
+      },
+      "hardware": {
+        "title": "Uppdragsspecifik hårdvara",
+        "copy": "Hårdvaran är designad runt den specifika missionsprofilen i stället för att anpassas från en generisk plattform."
+      },
+      "manufacturing": {
+        "title": "Distribuerad tillverkning",
+        "copy": "Produkten är byggd för utspridd produktion och snabb skalning mot miljonproduktion av FPV-drönare."
+      }
+    },
+    "roadmapSection": {
+      "label": "Roadmap",
+      "title": "Från nuvarande FPV-plattform till autonoma svärmsystem",
+      "copy": "Roadmapen bygger vidare på samma mjukvarugrund över fler luftfarkoster och successivt mer autonom missionsförmåga."
+    },
+    "roadmap": {
+      "fpv": {
+        "phase": "Nu",
+        "title": "FPV kamikaze",
+        "copy": "Quadcopter-drönarplattform. Drönaren finns."
+      },
+      "fixed": {
+        "phase": "Nästa",
+        "title": "Fixed-wing, SIB & Vampire",
+        "copy": "Lågkostnadsdrönare på samma mjukvaruplattform."
+      },
+      "autonomy": {
+        "phase": "Under utveckling",
+        "title": "Autonomi",
+        "copy": "Autonom navigering, detektion och målsökning."
+      },
+      "swarm": {
+        "phase": "Framtid",
+        "title": "Svärm",
+        "copy": "Massproducerade drönare som opererar i koordinerade svärmar."
+      }
+    }
   },
   "contact": {
     "meta": {
-      "title": "Kontakt"
+      "title": "Kontakt - Tenet Industries"
     },
     "hero": {
       "eyebrow": "Transmissionskanal",
       "title": "Ta kontakt",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, sapien at finibus posuere, erat libero efficitur augue, vitae tincidunt lorem nisi vitae arcu."
+      "copy": "Hör av dig för att diskutera upphandling, partnerskap eller pressförfrågningar. Vi skickar ditt meddelande till rätt kanal och svarar inom 24 timmar."
     },
     "form": {
       "tag": "Kontaktformulär",
       "title": "Skicka ett meddelande",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere, justo et volutpat dictum, enim arcu efficitur lorem, vitae pharetra erat nisl vitae nisi.",
-      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vi skickar ditt meddelande till rätt kanal.",
+      "copy": "Fyll i dina uppgifter nedan. All kommunikation hanteras via krypterade kanaler.",
+      "note": "Ditt meddelande skickas till rätt kanal. Vi svarar inom 24 timmar under vardagar.",
       "submit": "Skicka förfrågan",
       "fields": {
         "name": {
@@ -83,15 +195,15 @@
     "details": {
       "tag": "Direktlinje",
       "title": "Kontaktuppgifter",
-      "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus, nibh sed viverra varius, nisi orci feugiat justo, nec dapibus libero purus non odio.",
+      "copy": "För direkta förfrågningar, använd kanalerna nedan. Vi finns i Stockholm och arbetar måndag till fredag.",
       "items": {
         "email": {
           "label": "E-post",
-          "value": "contact@example.com"
+          "value": "contact@tenetindustries.com"
         },
         "phone": {
           "label": "Telefon",
-          "value": "+00 123 456 789"
+          "value": "+46 70 000 00 00"
         },
         "location": {
           "label": "Plats",
@@ -105,7 +217,7 @@
         },
         "availability": {
           "label": "Tillgänglighet",
-          "value": "Mån–fre"
+          "value": "Mån-fre"
         },
         "security": {
           "label": "Kanal",
