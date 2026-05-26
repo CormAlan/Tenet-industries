@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     },
     body: JSON.stringify({
       // Change to e.g. "noreply@tenetindustries.com" after verifying your domain in Resend
-      from: 'Tenet Contact Form <onboarding@resend.dev>',
+      from: 'Tenet Contact Form <noreply@tenetindustries.com>',
       to: ['founders@tenetindustries.com'],
       reply_to: email,
       subject: subject ? `[Contact] ${subject}` : `[Contact] Message from ${name}`,
