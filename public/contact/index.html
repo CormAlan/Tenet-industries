@@ -443,6 +443,52 @@
       text-align: right;
     }
 
+    /* ── mobile nav ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+    .nav-toggle:hover { border-color: var(--text); color: var(--text); }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(12, 12, 12, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
+      z-index: 48;
+    }
+    .mobile-nav.is-open { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--text); }
+
+    @media (max-width: 680px) {
+      .nav-toggle { display: block; }
+    }
+
     .footer {
       background: var(--surface);
       border-top: 1px solid var(--line-soft);
@@ -637,6 +683,7 @@
             <a href="/#section-3" data-i18n="nav.doctrine"></a>
             <a href="/contact" data-i18n="nav.contact" aria-current="page"></a>
           </nav>
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
 
           <div class="language-switcher" aria-label="Language selector">
             <div class="language-switcher__flags" id="language-select" role="group">
@@ -655,6 +702,13 @@
           </div>
         </div>
       </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="/#section-1" data-i18n="nav.platform"></a>
+        <a href="/product" data-i18n="nav.product"></a>
+        <a href="/#section-2" data-i18n="nav.systems"></a>
+        <a href="/#section-3" data-i18n="nav.doctrine"></a>
+        <a href="/contact" data-i18n="nav.contact"></a>
+      </nav>
     </div>
 
     <div class="page-width">
@@ -801,6 +855,7 @@
 
   <script>
     const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
+    const ENABLED_LANGUAGES = ['en', 'sv']; // add 'uk' to re-enable Ukrainian
     const DEFAULT_LANGUAGE = 'en';
     const LOCALE_PATHS = {
       en: '../locales/en.json',
@@ -1085,10 +1140,10 @@
 
     function getInitialLanguage() {
       const stored = localStorage.getItem('preferred-language');
-      if (SUPPORTED_LANGUAGES.includes(stored)) return stored;
+      if (ENABLED_LANGUAGES.includes(stored)) return stored;
 
       const browserLanguage = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
-      return SUPPORTED_LANGUAGES.includes(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE;
+      return ENABLED_LANGUAGES.includes(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE;
     }
 
     let resizeTimer;
@@ -1100,10 +1155,31 @@
     });
 
     document.querySelectorAll('.language-flag').forEach((button) => {
+      if (!ENABLED_LANGUAGES.includes(button.dataset.lang)) {
+        button.style.display = 'none';
+        return;
+      }
       button.addEventListener('click', async () => {
         await setLanguage(button.dataset.lang);
       });
     });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('is-open');
+        navToggle.textContent = open ? 'Close' : 'Menu';
+        navToggle.setAttribute('aria-expanded', open);
+      });
+      mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('is-open');
+          navToggle.textContent = 'Menu';
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     setLanguage(getInitialLanguage())
       .then(() => {
