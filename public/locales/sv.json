@@ -166,7 +166,7 @@
     "form": {
       "tag": "Kontaktformulär",
       "title": "Skicka ett meddelande",
-      "copy": "Fyll i dina uppgifter nedan. All kommunikation hanteras via krypterade kanaler.",
+      "copy": "Fyll i dina uppgifter nedan. Dessa meddelanden hanteras via krypterade kanaler.",
       "note": "Ditt meddelande skickas till rätt kanal. Vi svarar inom 24 timmar under vardagar.",
       "submit": "Skicka förfrågan",
       "fields": {

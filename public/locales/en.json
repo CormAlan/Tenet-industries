@@ -166,7 +166,7 @@
     "form": {
       "tag": "Contact form",
       "title": "Send a message",
-      "copy": "Fill in your details below. All communications are handled through encrypted channels.",
+      "copy": "Fill in your details below. These messages are handled through encrypted channels.",
       "note": "Your message will be routed to the correct channel. We respond within 24 hours on business days.",
       "submit": "Send inquiry",
       "fields": {
