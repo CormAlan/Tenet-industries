@@ -1230,6 +1230,15 @@
       );
     }
 
+    async function waitForFont(spec, maxWait = 4000) {
+      const deadline = Date.now() + maxWait;
+      while (Date.now() < deadline) {
+        const loaded = await document.fonts.load(spec);
+        if (loaded.length > 0) return;
+        await new Promise(r => setTimeout(r, 50));
+      }
+    }
+
     function clamp(value, min, max) {
       return Math.min(max, Math.max(min, value));
     }
@@ -1260,7 +1269,7 @@
         button.classList.toggle('active', button.dataset.lang === safeLanguage);
       });
       applyStaticTranslations();
-      await document.fonts.ready;
+      await waitForFont('800 1em Oxanium');
       initTextBlocks();
       updateScrollRevealTargets();
     }
