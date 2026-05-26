@@ -7,8 +7,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minimal Pixel Scroll Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Teko:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;800&family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Teko:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;800&family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
     :root {
       --font-head: 'Oxanium', sans-serif;
@@ -559,43 +561,54 @@
       }
 
       .topbar__inner {
-        min-height: 60px;
-        align-items: flex-start;
-        padding: 14px 0;
-        flex-direction: column;
+        min-height: 52px;
+        padding: 0;
       }
 
       .topbar__right {
-        width: 100%;
-        justify-content: space-between;
+        gap: 8px;
       }
 
-      .brand {
-        font-size: 0.82rem;
+      .brand__logo {
+        height: 26px;
+      }
+
+      .language-flag {
+        width: 32px;
+        height: 24px;
       }
 
       .nav {
         display: none;
       }
 
+      .hero {
+        min-height: 75vh;
+        padding: 32px 0 16px;
+      }
+
       .section {
-        padding: 56px 0;
-        scroll-margin-top: 180px;
+        padding: 44px 0;
+        scroll-margin-top: 60px;
       }
 
       .section__media {
-        min-height: 240px;
+        min-height: 200px;
       }
 
       #section-1 .section__media {
         width: 100%;
-        min-height: 260px;
+        min-height: 220px;
+      }
+
+      .section--reverse .section__text {
+        order: -1;
       }
 
       #section-2 {
         margin-top: 8px;
         margin-bottom: 16px;
-        padding: 54px 12px;
+        padding: 44px 12px;
       }
 
       #section-2 .section__media {
@@ -1097,7 +1110,7 @@
         this.fontSize = mobile
           ? Math.min(
               this.baseFontSize,
-              this.baseFontSize >= 100 ? 74 : this.baseFontSize >= 50 ? 44 : 20
+              this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 28 : 16
             )
           : this.baseFontSize;
 
@@ -1247,6 +1260,7 @@
         button.classList.toggle('active', button.dataset.lang === safeLanguage);
       });
       applyStaticTranslations();
+      await document.fonts.ready;
       initTextBlocks();
       updateScrollRevealTargets();
     }

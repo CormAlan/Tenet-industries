@@ -16,8 +16,8 @@
   },
   "hero": {
     "eyebrow": "Backed by Y Combinator",
-    "title": "Lågkostnads massproducerbara kamikazedrönare",
-    "copy": "Tenet är ett företag som designar och tillverkar lågkostnads drönare med egenutvecklad mjukvara och purpose-built hårdvara. Varje utveckling gör vi för att sänka kostnaden på slutprodukten."
+    "title": "Lågkostnads massproducerbara försvarssystem",
+    "copy": "Med design-for-manufacturing och first principles som grund omdefinierar vi försvaret, med start i lågkostnads kamikazedrönare."
   },
   "sections": {
     "section1": {
@@ -41,7 +41,7 @@
     "placeholder": "Video"
   },
   "footer": {
-    "tagline": "Lågkostnads massproducerbara kamikazedrönare",
+    "tagline": "Lågkostnads massproducerbara försvarssystem",
     "docCompany": "Företag",
     "docBacked": "Backed by",
     "copyright": "© 2026 Tenet Industries"

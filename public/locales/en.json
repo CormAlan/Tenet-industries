@@ -16,8 +16,8 @@
   },
   "hero": {
     "eyebrow": "Backed by Y Combinator",
-    "title": "Low-cost massproducible strike drones",
-    "copy": "Tenet is a company that designs and manufactures low-cost drones with proprietary software and purpose-built hardware. Every development we make is to reduce the cost of the final product."
+    "title": "Low-cost massproducible defense systems",
+    "copy": "Using design-for-manufacturing and first principles to reimagine defense, starting with low-cost strike drones."
   },
   "sections": {
     "section1": {
@@ -41,7 +41,7 @@
     "placeholder": "Video"
   },
   "footer": {
-    "tagline": "Low-cost massproducible strike drones",
+    "tagline": "Low-cost massproducible defense systems",
     "docCompany": "Company",
     "docBacked": "Backed by",
     "copyright": "© 2026 Tenet Industries"
