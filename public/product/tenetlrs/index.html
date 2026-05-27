@@ -794,7 +794,7 @@
           <canvas
             class="text-canvas pixel-reveal"
             style="margin-bottom: 34px;"
-            data-text="A JR-bay transmitter module running TenetLRS. Connects to most off-the-shelf controllers via CRSF, configurable over Bluetooth with TAK integration, at up to 1W output power."
+            data-text="A JR-bay transmitter module running TenetLRS at up to 1W output. Connects to most off-the-shelf controllers via CRSF, configures over Bluetooth, and integrates natively with TAK."
             data-font-size="22"
             data-max-width="680"
             data-weight="400"
@@ -840,11 +840,11 @@
           <div class="stat__label">Form factor</div>
         </div>
         <div class="stat">
-          <div class="stat__value">CRSF</div>
-          <div class="stat__label">Interface</div>
+          <div class="stat__value">TAK</div>
+          <div class="stat__label">Integration</div>
         </div>
         <div class="stat">
-          <div class="stat__value">BT</div>
+          <div class="stat__value">Bluetooth</div>
           <div class="stat__label">Configuration</div>
         </div>
       </section>
@@ -866,7 +866,7 @@
           <div>
             <canvas
               class="text-canvas pixel-reveal"
-              data-text="TenetTX uses the JR-bay form factor and CRSF interface found on most commercial controllers, making it a drop-in upgrade. Bluetooth configuration and TAK support integrate it directly into existing command-and-control workflows."
+              data-text="TenetTX uses the JR-bay form factor and CRSF interface found on most commercial controllers, making it a drop-in upgrade. Bluetooth configuration and TAK support integrate it directly into existing command-and-control ecosystems."
               data-font-size="18"
               data-max-width="600"
               data-weight="400"
@@ -895,8 +895,8 @@
               <span>Bluetooth</span>
             </div>
             <div class="spec-row">
-              <span>TAK</span>
-              <span>Compatible</span>
+              <span>Integration</span>
+              <span>TAK plugin</span>
             </div>
             <div class="spec-row">
               <span>Protocol</span>
@@ -918,7 +918,7 @@
             <article class="capability">
               <span class="capability__index">03</span>
               <h3>TAK compatible</h3>
-              <p>Integrates with TAK-based command networks and is configurable over Bluetooth from the field without additional equipment.</p>
+              <p>Integrates with existing TAK clients through our Tenet-TAK plugin and is configurable over Bluetooth in the field.</p>
             </article>
             <article class="capability">
               <span class="capability__index">04</span>
@@ -946,7 +946,7 @@
           <div>
             <canvas
               class="text-canvas pixel-reveal"
-              data-text="TenetLRS is Tenet Industries' encrypted wideband frequency-hopping radio protocol. Receivers are backwards compatible with ExpressLRS, and frequency bands are configurable across a wider range than regular COTS radio systems."
+              data-text="TenetLRS is our encrypted multi-band frequency-hopping radio protocol. The hop sequence covers a range far wider than any conventional COTS radio, with operating bands configurable per mission. Receivers remain backwards compatible with ExpressLRS."
               data-font-size="18"
               data-max-width="600"
               data-weight="400"
@@ -959,24 +959,20 @@
         <div class="protocol-content">
           <div class="spec-table">
             <div class="spec-row">
-              <span>Protocol type</span>
-              <span>FHSS</span>
-            </div>
-            <div class="spec-row">
               <span>Security</span>
-              <span>Encrypted</span>
+              <span>Authenticated encryption (AEAD)</span>
             </div>
             <div class="spec-row">
-              <span>ELRS compat.</span>
-              <span>Receiver compatible</span>
+              <span>ELRS compatibility</span>
+              <span>Receivers only</span>
             </div>
             <div class="spec-row">
               <span>Frequency</span>
-              <span>Configurable wideband</span>
+              <span>Multi-band, configurable</span>
             </div>
             <div class="spec-row">
               <span>Platforms</span>
-              <span>TenetTX + future systems</span>
+              <span>TenetTX + Midsummer</span>
             </div>
           </div>
 
@@ -1001,22 +997,22 @@
           <article class="capability">
             <span class="capability__index">01</span>
             <h3>Anti-jamming</h3>
-            <p>Wideband frequency hopping spread spectrum defeats narrowband and broadband jamming attempts across the full operating frequency range.</p>
+            <p>The hop sequence spans an operating range wide enough that any barrage jammer must trade coverage for power-spectral-density.</p>
           </article>
           <article class="capability">
             <span class="capability__index">02</span>
             <h3>Encrypted link</h3>
-            <p>End-to-end encryption on the control channel prevents interception and unauthorized command injection.</p>
+            <p>End-to-end authenticated encryption on the radio link prevents interception and unauthorized command injection.</p>
           </article>
           <article class="capability">
             <span class="capability__index">03</span>
             <h3>ELRS compatible</h3>
-            <p>Receivers are backwards compatible with ExpressLRS, enabling integration with existing hardware without replacement.</p>
+            <p>The Midsummer drone auto-detects between TenetLRS and stock ExpressLRS at bind, letting operators keep existing handsets in service.</p>
           </article>
           <article class="capability">
             <span class="capability__index">04</span>
-            <h3>Configurable bands</h3>
-            <p>Frequency bands are configurable across a wider range than regular COTS systems.</p>
+            <h3>TAK-to-drone data path</h3>
+            <p>Data packets interleaved with regular RC traffic let TAK clients push configuration and mission data from the controller directly to the drone — over the same encrypted link.</p>
           </article>
         </div>
       </div>
