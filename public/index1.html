@@ -525,6 +525,19 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__privacy-link {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__privacy-link:hover {
+      color: var(--text);
     }
 
     @media (max-width: 900px) {
@@ -1046,6 +1059,7 @@
         </div>
         <div class="footer__bottom">
           <span data-i18n="footer.copyright"></span>
+          <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link"></a>
         </div>
       </div>
     </footer>

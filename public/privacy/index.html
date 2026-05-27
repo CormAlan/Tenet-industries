@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Tenet Industries</title>
+  <meta property="og:title" content="Privacy Policy – Tenet Industries" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tenetindustries.com/privacy" />
+  <meta property="og:image" content="https://tenetindustries.com/src/assets/Tenet_OG.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://tenetindustries.com/src/assets/Tenet_OG.png" />
+  <link rel="icon" href="/src/assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <style>
+
+    :root {
+      --font-head: 'Oxanium', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg: #000000;
+      --surface: #151515;
+      --surface-soft: rgba(255,255,255,0.03);
+      --text: #f5f5f5;
+      --muted: #9d9d9d;
+      --accent: rgba(217, 232, 18, 1);
+      --accent-dim: rgba(217, 232, 18, 0.14);
+      --line: rgba(255,255,255,0.14);
+      --line-soft: rgba(255,255,255,0.08);
+      --page: min(1500px, calc(100vw - 64px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .topbar__inner {
+      width: var(--page);
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; }
+    .brand__logo { height: 22px; }
+
+    .topbar__right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      padding: 16px;
+      gap: 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line-soft);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a { color: var(--muted); }
+    .mobile-nav a:hover { color: var(--text); }
+    .mobile-nav.is-open { display: flex; }
+
+    .language-switcher { display: flex; align-items: center; }
+
+    .language-switcher__flags {
+      display: flex;
+      gap: 8px;
+    }
+
+    .language-flag {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .language-flag img { width: 20px; height: 14px; object-fit: cover; display: block; }
+    .language-flag.active, .language-flag:hover { opacity: 1; }
+
+    /* ── Privacy content ── */
+    .privacy-page {
+      width: var(--page);
+      margin: 0 auto;
+      padding: 80px 0 120px;
+      max-width: 780px;
+    }
+
+    .privacy-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 24px;
+    }
+
+    .privacy-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .privacy-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 64px;
+    }
+
+    .privacy-section {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 36px;
+      margin-bottom: 40px;
+    }
+
+    .privacy-section h2 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(245,245,245,0.75);
+      margin: 0 0 12px;
+    }
+
+    .privacy-section ul {
+      padding-left: 1.2em;
+      margin: 0 0 12px;
+    }
+
+    .privacy-section a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .privacy-section a:hover { opacity: 0.8; }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .footer__inner {
+      width: var(--page);
+      margin: 0 auto;
+      padding: 48px 0 40px;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 48px;
+      padding-bottom: 32px;
+    }
+
+    .footer__brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer__logo-link { display: inline-flex; }
+    .footer__logo { height: 26px; }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .footer__nav-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer__nav-col a:hover { color: var(--text); }
+
+    .footer__doc-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 200px;
+    }
+
+    .footer__doc-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .footer__doc-row span:first-child { color: var(--muted); }
+    .footer__doc-row span:last-child { color: var(--text); text-align: right; }
+
+    .footer__bottom {
+      padding-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__privacy-link {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__privacy-link:hover { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .nav-toggle { display: block; }
+
+      .footer__top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer__doc-col { min-width: 0; }
+
+      .privacy-page { padding: 48px 0 80px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <a href="/" class="brand" aria-label="Tenet Industries">
+        <img src="/src/assets/logo.svg" alt="Tenet Industries" class="brand__logo" />
+      </a>
+
+      <div class="topbar__right">
+        <nav class="nav">
+          <a href="/#section-1" data-i18n="nav.platform"></a>
+          <a href="/product" data-i18n="nav.product"></a>
+          <a href="/#section-2" data-i18n="nav.systems"></a>
+          <a href="/#section-3" data-i18n="nav.doctrine"></a>
+          <a href="/contact" data-i18n="nav.contact"></a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+
+        <div class="language-switcher" aria-label="Language selector">
+          <div class="language-switcher__flags" id="language-select" role="group">
+            <button type="button" class="language-flag" data-lang="en" aria-label="English">
+              <img src="/src/assets/en.png" alt="English" />
+            </button>
+            <button type="button" class="language-flag" data-lang="sv" aria-label="Swedish">
+              <img src="/src/assets/sv.svg" alt="Swedish" />
+            </button>
+            <button type="button" class="language-flag" data-lang="uk" aria-label="Ukrainian">
+              <img src="/src/assets/uk.png" alt="Ukrainian" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="/#section-1" data-i18n="nav.platform"></a>
+      <a href="/product" data-i18n="nav.product"></a>
+      <a href="/#section-2" data-i18n="nav.systems"></a>
+      <a href="/#section-3" data-i18n="nav.doctrine"></a>
+      <a href="/contact" data-i18n="nav.contact"></a>
+    </nav>
+  </div>
+
+  <main class="privacy-page">
+    <p class="privacy-eyebrow">Legal</p>
+    <h1 class="privacy-title">Privacy Policy</h1>
+    <p class="privacy-date">Effective: 27 May 2026</p>
+
+    <section class="privacy-section">
+      <h2>Who we are</h2>
+      <p>Tenet Industries is a defense technology company based in Stockholm, Sweden. We build low-cost, mass-producible defense systems. You can reach us at <a href="mailto:founders@tenetindustries.com">founders@tenetindustries.com</a>.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>What data we collect</h2>
+      <p><strong>Contact form.</strong> When you submit the contact form on this website, we collect the following information you provide:</p>
+      <ul>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Company or organization</li>
+        <li>Subject</li>
+        <li>Message</li>
+      </ul>
+      <p>This data is used solely to respond to your inquiry and route it to the appropriate person at Tenet Industries.</p>
+      <p><strong>Server and analytics data.</strong> This website is hosted on Vercel. When you visit, Vercel may log your IP address, browser type, pages visited, and request timestamps as part of standard server operation. We use Vercel Web Analytics, which collects aggregated, anonymized traffic data. No personally identifiable information is stored by Vercel Analytics.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>Legal basis (GDPR)</h2>
+      <p>For contact form submissions, our legal basis is Article 6(1)(b) of the GDPR — processing necessary to respond to your request.</p>
+      <p>For analytics and server logs, our legal basis is Article 6(1)(f) — our legitimate interest in understanding how the site is used and maintaining its security.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>Data retention</h2>
+      <p>Contact form submissions are retained for as long as necessary to handle your inquiry and any resulting business relationship, and no longer than two years unless a longer retention period is required. Vercel server logs and analytics data are retained according to <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel's privacy policy</a>.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>Third parties</h2>
+      <p>We use Vercel for website hosting and analytics. Vercel processes data on our behalf subject to their privacy policy. We do not sell, share, or transfer your personal data to any other third parties.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>Your rights</h2>
+      <p>Under the GDPR, you have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your data</li>
+        <li>Object to or restrict processing</li>
+        <li>Lodge a complaint with the Swedish Authority for Privacy Protection (IMY) at <a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">imy.se</a></li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:founders@tenetindustries.com">founders@tenetindustries.com</a>.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>Changes to this policy</h2>
+      <p>We may update this privacy policy from time to time. Material changes will be reflected by updating the effective date at the top of this page.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
+            <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
+          </a>
+          <p class="footer__tagline" data-i18n="footer.tagline"></p>
+        </div>
+        <nav class="footer__nav-col">
+          <a href="/#section-1" data-i18n="nav.platform"></a>
+          <a href="/product" data-i18n="nav.product"></a>
+          <a href="/#section-2" data-i18n="nav.systems"></a>
+          <a href="/#section-3" data-i18n="nav.doctrine"></a>
+          <a href="/contact" data-i18n="nav.contact"></a>
+        </nav>
+        <div class="footer__doc-col">
+          <div class="footer__doc-row">
+            <span data-i18n="footer.docCompany"></span>
+            <span>Tenet Industries</span>
+          </div>
+          <div class="footer__doc-row">
+            <span data-i18n="footer.docBacked"></span>
+            <span>Y Combinator</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.copyright"></span>
+        <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link" aria-current="page"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
+    const ENABLED_LANGUAGES = ['en', 'sv'];
+    const DEFAULT_LANGUAGE = 'en';
+    const LOCALE_PATHS = {
+      en: '../locales/en.json',
+      sv: '../locales/sv.json',
+      uk: '../locales/uk.json'
+    };
+
+    let translations = {};
+
+    function getNestedValue(object, path) {
+      return path.split('.').reduce((acc, key) => {
+        if (acc && Object.prototype.hasOwnProperty.call(acc, key)) return acc[key];
+        return undefined;
+      }, object);
+    }
+
+    function t(key) {
+      const value = getNestedValue(translations, key);
+      return typeof value === 'string' ? value : key;
+    }
+
+    async function loadTranslations(language) {
+      const response = await fetch(LOCALE_PATHS[language]);
+      if (!response.ok) throw new Error(`Failed to load translations for ${language}`);
+      return response.json();
+    }
+
+    function applyTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        el.textContent = t(el.dataset.i18n);
+      });
+      document.documentElement.lang = localStorage.getItem('preferred-language') || DEFAULT_LANGUAGE;
+      const switcher = document.getElementById('language-select');
+      if (switcher) switcher.setAttribute('aria-label', t('language.ariaLabel'));
+    }
+
+    async function setLanguage(language) {
+      const safe = SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
+      translations = await loadTranslations(safe);
+      localStorage.setItem('preferred-language', safe);
+      document.querySelectorAll('.language-flag').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === safe);
+      });
+      applyTranslations();
+    }
+
+    function getInitialLanguage() {
+      const stored = localStorage.getItem('preferred-language');
+      if (ENABLED_LANGUAGES.includes(stored)) return stored;
+      const browser = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
+      return ENABLED_LANGUAGES.includes(browser) ? browser : DEFAULT_LANGUAGE;
+    }
+
+    document.querySelectorAll('.language-flag').forEach((btn) => {
+      if (!ENABLED_LANGUAGES.includes(btn.dataset.lang)) {
+        btn.style.display = 'none';
+        return;
+      }
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('is-open');
+        navToggle.textContent = open ? 'Close' : 'Menu';
+        navToggle.setAttribute('aria-expanded', open);
+      });
+      mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('is-open');
+          navToggle.textContent = 'Menu';
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    setLanguage(getInitialLanguage()).catch(() => setLanguage(DEFAULT_LANGUAGE));
+  </script>
+</body>
+</html>
