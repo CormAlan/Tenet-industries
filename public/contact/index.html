@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <script defer src="/_vercel/insights/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
+  <title>Contact - Tenet Industries</title>
   <meta property="og:title" content="Contact – Tenet Industries" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tenetindustries.com/contact" />
@@ -110,52 +110,55 @@
       color: var(--text);
     }
 
-    .language-switcher {
+    .nav__item {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 10px;
+    }
+
+    .nav__item > span {
+      cursor: default;
       color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .nav__item:hover > span { color: var(--text); }
+
+    .nav__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      padding-top: 12px;
+    }
+
+    .nav__item:hover .nav__dropdown { display: block; }
+
+    .nav__dropdown-inner {
+      background: rgba(12, 12, 12, 0.98);
+      border: 1px solid var(--line-soft);
+      backdrop-filter: blur(12px);
+      min-width: 148px;
+    }
+
+    .nav__dropdown a {
+      display: block;
+      padding: 10px 16px;
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+      transition: color 0.18s ease;
     }
 
-    .language-switcher__flags {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .language-flag {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line-soft);
-      padding: 4px;
-      width: 38px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-    }
-
-    .language-flag:hover {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .language-flag.active {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .language-flag img {
-      display: block;
-      width: 22px;
-      height: 16px;
-      object-fit: cover;
-    }
+    .nav__dropdown a:last-child { border-bottom: none; }
+    .nav__dropdown a:hover,
+    .nav__dropdown a[aria-current="page"] { color: var(--text); }
 
     .page-width {
       width: var(--page);
@@ -424,6 +427,7 @@
       font-size: 1rem;
       line-height: 1.8;
       color: var(--text);
+      white-space: pre-line;
     }
 
     .contact-meta {
@@ -698,48 +702,37 @@
 
         <div class="topbar__right">
           <nav class="nav">
-            <a href="/#section-1" data-i18n="nav.platform"></a>
-            <a href="/product" data-i18n="nav.product"></a>
-            <a href="/#section-2" data-i18n="nav.systems"></a>
-            <a href="/#section-3" data-i18n="nav.doctrine"></a>
-            <a href="/contact" data-i18n="nav.contact" aria-current="page"></a>
+            <a href="/">Home</a>
+            <div class="nav__item">
+              <span>Products</span>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-inner">
+                  <a href="/product/midsummer">Midsummer</a>
+                  <a href="/product/tenetlrs">TenetTX</a>
+                </div>
+              </div>
+            </div>
+            <a href="/contact" aria-current="page">Contact</a>
           </nav>
           <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-
-          <div class="language-switcher" aria-label="Language selector">
-            <div class="language-switcher__flags" id="language-select" role="group">
-              <button type="button" class="language-flag" data-lang="en" aria-label="English">
-                <img src="/src/assets/en.png" alt="English" />
-              </button>
-
-              <button type="button" class="language-flag" data-lang="sv" aria-label="Swedish">
-                <img src="/src/assets/sv.svg" alt="Swedish" />
-              </button>
-
-              <button type="button" class="language-flag" data-lang="uk" aria-label="Ukrainian">
-                <img src="/src/assets/uk.png" alt="Ukrainian" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav">
-        <a href="/#section-1" data-i18n="nav.platform"></a>
-        <a href="/product" data-i18n="nav.product"></a>
-        <a href="/#section-2" data-i18n="nav.systems"></a>
-        <a href="/#section-3" data-i18n="nav.doctrine"></a>
-        <a href="/contact" data-i18n="nav.contact"></a>
+        <a href="/">Home</a>
+        <a href="/product/midsummer">Midsummer</a>
+        <a href="/product/tenetlrs">TenetTX</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
 
     <div class="page-width">
       <header class="hero" id="top">
         <div class="hero__inner">
-          <span class="eyebrow" data-i18n="contact.hero.eyebrow"></span>
+          <span class="eyebrow">Transmission channel</span>
 
           <canvas
             class="text-canvas hero-title pixel-reveal"
-            data-i18n="contact.hero.title"
+            data-text="Get in contact"
             data-font-size="118"
             data-max-width="1100"
             data-reveal="time"
@@ -748,7 +741,7 @@
 
           <canvas
             class="text-canvas hero-copy pixel-reveal"
-            data-i18n="contact.hero.copy"
+            data-text="Reach out to discuss procurement, partnerships, or press inquiries. We will route your message to the correct channel and respond within 24 hours."
             data-font-size="26"
             data-max-width="780"
             data-weight="500"
@@ -762,77 +755,78 @@
       <main class="contact-section">
         <section class="contact-shell">
           <div class="contact-form">
-            <span class="contact-panel-tag" data-i18n="contact.form.tag"></span>
-            <h2 class="contact-form__title" data-i18n="contact.form.title"></h2>
-            <p class="contact-form__copy" data-i18n="contact.form.copy"></p>
+            <span class="contact-panel-tag">Contact form</span>
+            <h2 class="contact-form__title">Send a message</h2>
+            <p class="contact-form__copy">Fill in your details below. These messages are handled through encrypted channels.</p>
 
             <form class="contact-form-grid" action="#" method="post">
               <div class="field">
-                <label for="contact-name" data-i18n="contact.form.fields.name.label"></label>
-                <input id="contact-name" name="name" type="text" data-i18n-placeholder="contact.form.fields.name.placeholder" />
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Your name" />
               </div>
 
               <div class="field">
-                <label for="contact-email" data-i18n="contact.form.fields.email.label"></label>
-                <input id="contact-email" name="email" type="email" data-i18n-placeholder="contact.form.fields.email.placeholder" />
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="your@email.com" />
               </div>
 
               <div class="field">
-                <label for="contact-company" data-i18n="contact.form.fields.company.label"></label>
-                <input id="contact-company" name="company" type="text" data-i18n-placeholder="contact.form.fields.company.placeholder" />
+                <label for="contact-company">Company</label>
+                <input id="contact-company" name="company" type="text" placeholder="Company or organization" />
               </div>
 
               <div class="field">
-                <label for="contact-subject" data-i18n="contact.form.fields.subject.label"></label>
-                <input id="contact-subject" name="subject" type="text" data-i18n-placeholder="contact.form.fields.subject.placeholder" />
+                <label for="contact-subject">Subject</label>
+                <input id="contact-subject" name="subject" type="text" placeholder="What is this regarding?" />
               </div>
 
               <div class="field field--full">
-                <label for="contact-message" data-i18n="contact.form.fields.message.label"></label>
-                <textarea id="contact-message" name="message" data-i18n-placeholder="contact.form.fields.message.placeholder"></textarea>
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" placeholder="Write your message here"></textarea>
               </div>
 
               <div class="field field--full contact-actions">
-                <p class="contact-note" data-i18n="contact.form.note"></p>
-                <button class="contact-submit" type="submit" data-i18n="contact.form.submit"></button>
+                <p class="contact-note">Your message will be routed to the correct channel. We respond within 24 hours on business days.</p>
+                <button class="contact-submit" type="submit">Send inquiry</button>
               </div>
             </form>
           </div>
 
           <aside class="contact-details">
-            <span class="contact-panel-tag" data-i18n="contact.details.tag"></span>
-            <h2 class="contact-details__title" data-i18n="contact.details.title"></h2>
-            <p class="contact-details__copy" data-i18n="contact.details.copy"></p>
+            <span class="contact-panel-tag">Direct line</span>
+            <h2 class="contact-details__title">Contact details</h2>
+            <p class="contact-details__copy">For direct inquiries, use the channels below. We are based in Stockholm and operate Monday through Friday.</p>
 
             <div class="contact-items">
               <div class="contact-item">
-                <span class="contact-item__label" data-i18n="contact.details.items.email.label"></span>
-                <div class="contact-item__value" data-i18n="contact.details.items.email.value"></div>
+                <span class="contact-item__label">Email</span>
+                <div class="contact-item__value">founders@tenetindustries.com</div>
               </div>
 
               <div class="contact-item">
-                <span class="contact-item__label" data-i18n="contact.details.items.phone.label"></span>
-                <div class="contact-item__value" data-i18n="contact.details.items.phone.value"></div>
+                <span class="contact-item__label">Phone</span>
+                <div class="contact-item__value">+46 72 151 50 46</div>
               </div>
 
               <div class="contact-item">
-                <span class="contact-item__label" data-i18n="contact.details.items.location.label"></span>
-                <div class="contact-item__value" data-i18n="contact.details.items.location.value"></div>
+                <span class="contact-item__label">Locations</span>
+                <div class="contact-item__value">Stockholm, Sweden
+San Francisco, USA</div>
               </div>
             </div>
 
             <div class="contact-meta">
               <div class="contact-meta__row">
-                <span data-i18n="contact.details.meta.response.label"></span>
-                <span data-i18n="contact.details.meta.response.value"></span>
+                <span>Response</span>
+                <span>Within 24h</span>
               </div>
               <div class="contact-meta__row">
-                <span data-i18n="contact.details.meta.availability.label"></span>
-                <span data-i18n="contact.details.meta.availability.value"></span>
+                <span>Availability</span>
+                <span>Mon-Fri</span>
               </div>
               <div class="contact-meta__row">
-                <span data-i18n="contact.details.meta.security.label"></span>
-                <span data-i18n="contact.details.meta.security.value"></span>
+                <span>Channel</span>
+                <span>Encrypted</span>
               </div>
             </div>
           </aside>
@@ -847,86 +841,39 @@
             <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
               <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
             </a>
-            <p class="footer__tagline" data-i18n="footer.tagline"></p>
+            <p class="footer__tagline">Low-cost massproducible defense systems</p>
           </div>
           <nav class="footer__nav-col">
-            <a href="/#section-1" data-i18n="nav.platform"></a>
-            <a href="/product" data-i18n="nav.product"></a>
-            <a href="/#section-2" data-i18n="nav.systems"></a>
-            <a href="/#section-3" data-i18n="nav.doctrine"></a>
-            <a href="/contact" data-i18n="nav.contact"></a>
+            <a href="/">Home</a>
+            <a href="/product/midsummer">Midsummer</a>
+            <a href="/product/tenetlrs">TenetTX</a>
+            <a href="/contact">Contact</a>
           </nav>
           <div class="footer__doc-col">
             <div class="footer__doc-row">
-              <span data-i18n="footer.docCompany"></span>
+              <span>Company</span>
               <span>Tenet Industries</span>
             </div>
             <div class="footer__doc-row">
-              <span data-i18n="footer.docBacked"></span>
+              <span>Backed by</span>
               <span>Y Combinator</span>
+            </div>
+            <div class="footer__doc-row">
+              <span>Offices</span>
+              <span>Stockholm · San Francisco</span>
             </div>
           </div>
         </div>
         <div class="footer__bottom">
-          <span data-i18n="footer.copyright"></span>
-          <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link"></a>
+          <span>© 2026 Tenet Industries</span>
+          <a href="/privacy" class="footer__privacy-link">Privacy Policy</a>
         </div>
       </div>
     </footer>
   </div>
 
   <script>
-    const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
-    const ENABLED_LANGUAGES = ['en', 'sv']; // add 'uk' to re-enable Ukrainian
-    const DEFAULT_LANGUAGE = 'en';
-    const LOCALE_PATHS = {
-      en: '../locales/en.json',
-      sv: '../locales/sv.json',
-      uk: '../locales/uk.json'
-    };
-
-    let translations = {};
     let textBlocks = [];
-
-    function getNestedValue(object, path) {
-      return path.split('.').reduce((acc, key) => {
-        if (acc && Object.prototype.hasOwnProperty.call(acc, key)) {
-          return acc[key];
-        }
-        return undefined;
-      }, object);
-    }
-
-    function t(key) {
-      const value = getNestedValue(translations, key);
-      return typeof value === 'string' ? value : key;
-    }
-
-    async function loadTranslations(language) {
-      const response = await fetch(LOCALE_PATHS[language]);
-      if (!response.ok) {
-        throw new Error(`Failed to load translations for ${language}`);
-      }
-      return response.json();
-    }
-
-    function applyStaticTranslations() {
-      document.querySelectorAll('[data-i18n]:not(canvas)').forEach((element) => {
-        const key = element.dataset.i18n;
-        element.textContent = t(key);
-      });
-
-      document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
-        const key = element.dataset.i18nPlaceholder;
-        element.setAttribute('placeholder', t(key));
-      });
-
-      document.title = t('contact.meta.title');
-      document.documentElement.lang = localStorage.getItem('preferred-language') || DEFAULT_LANGUAGE;
-
-      const switcher = document.getElementById('language-select');
-      switcher.setAttribute('aria-label', t('language.ariaLabel'));
-    }
 
     class PixelRevealText {
       constructor(canvas) {
@@ -1108,9 +1055,6 @@
 
     function initTextBlocks() {
       destroyTextBlocks();
-      document.querySelectorAll('canvas[data-i18n]').forEach((canvas) => {
-        canvas.dataset.text = t(canvas.dataset.i18n);
-      });
       textBlocks = Array.from(document.querySelectorAll('.pixel-reveal')).map(
         (canvas) => new PixelRevealText(canvas)
       );
@@ -1147,43 +1091,12 @@
       requestAnimationFrame(animate);
     }
 
-    async function setLanguage(language) {
-      const safeLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-      translations = await loadTranslations(safeLanguage);
-      localStorage.setItem('preferred-language', safeLanguage);
-      document.querySelectorAll('.language-flag').forEach((button) => {
-        button.classList.toggle('active', button.dataset.lang === safeLanguage);
-      });
-      applyStaticTranslations();
-      await waitForFont('800 1em Oxanium');
-      initTextBlocks();
-      updateScrollRevealTargets();
-    }
-
-    function getInitialLanguage() {
-      const stored = localStorage.getItem('preferred-language');
-      if (ENABLED_LANGUAGES.includes(stored)) return stored;
-
-      const browserLanguage = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
-      return ENABLED_LANGUAGES.includes(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE;
-    }
-
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         textBlocks.forEach((block) => block.resize());
       }, 80);
-    });
-
-    document.querySelectorAll('.language-flag').forEach((button) => {
-      if (!ENABLED_LANGUAGES.includes(button.dataset.lang)) {
-        button.style.display = 'none';
-        return;
-      }
-      button.addEventListener('click', async () => {
-        await setLanguage(button.dataset.lang);
-      });
     });
 
     const navToggle = document.querySelector('.nav-toggle');
@@ -1203,17 +1116,11 @@
       });
     }
 
-    setLanguage(getInitialLanguage())
-      .then(() => {
-        requestAnimationFrame(animate);
-      })
-      .catch(async (error) => {
-        console.error(error);
-        if (getInitialLanguage() !== DEFAULT_LANGUAGE) {
-          await setLanguage(DEFAULT_LANGUAGE);
-          requestAnimationFrame(animate);
-        }
-      });
+    waitForFont('800 1em Oxanium').then(() => {
+      initTextBlocks();
+      updateScrollRevealTargets();
+      requestAnimationFrame(animate);
+    });
 
     const form = document.querySelector('.contact-form-grid');
     const submitBtn = form && form.querySelector('.contact-submit');
@@ -1247,7 +1154,7 @@
           }
         } catch {
           submitBtn.disabled = false;
-          submitBtn.textContent = t('contact.form.submit');
+          submitBtn.textContent = 'Send inquiry';
           const existing = form.querySelector('.contact-form-error');
           if (!existing) {
             const err = document.createElement('p');

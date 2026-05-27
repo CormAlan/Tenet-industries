@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midsummer - Tenet Industries</title>
+  <meta property="og:title" content="Midsummer – Tenet Industries" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tenetindustries.com/product/midsummer" />
+  <meta property="og:image" content="https://tenetindustries.com/src/assets/Tenet_OG.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://tenetindustries.com/src/assets/Tenet_OG.png" />
+  <link rel="icon" href="/src/assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <style>
+
+    :root {
+      --font-head: 'Oxanium', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg: #000000;
+      --surface: #151515;
+      --text: #f5f5f5;
+      --muted: #9d9d9d;
+      --line: rgba(217, 232, 18, 0.16);
+      --line-soft: rgba(255,255,255,0.08);
+      --page: min(1500px, calc(100vw - 64px));
+      --grid-size: 36px;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(21, 21, 21, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .topbar__inner {
+      width: var(--page);
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .brand__logo {
+      height: 34px;
+      width: auto;
+    }
+
+    .topbar__right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] { color: var(--text); }
+
+    .nav__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__item > span {
+      cursor: default;
+      color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .nav__item:hover > span { color: var(--text); }
+
+    .nav__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      padding-top: 12px;
+    }
+
+    .nav__item:hover .nav__dropdown { display: block; }
+
+    .nav__dropdown-inner {
+      background: rgba(12, 12, 12, 0.98);
+      border: 1px solid var(--line-soft);
+      backdrop-filter: blur(12px);
+      min-width: 148px;
+    }
+
+    .nav__dropdown a {
+      display: block;
+      padding: 10px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+
+    .nav__dropdown a:last-child { border-bottom: none; }
+    .nav__dropdown a:hover,
+    .nav__dropdown a[aria-current="page"] { color: var(--text); }
+
+    .text-canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+
+    .page-width {
+      width: var(--page);
+      margin: 0 auto;
+    }
+
+    .product-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.78fr);
+      gap: clamp(48px, 6vw, 110px);
+      align-items: center;
+      min-height: calc(78vh - 68px);
+      padding: 70px 0 58px;
+      overflow: hidden;
+    }
+
+    .product-hero::before,
+    .product-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(226, 233, 34, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: var(--grid-size) var(--grid-size);
+      opacity: 0.34;
+      pointer-events: none;
+      mask-image: linear-gradient(to right, black 0%, black 70%, transparent 100%);
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .product-section__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow,
+    .section-label,
+    .stat__label,
+    .capability__index {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 0.78rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 24px;
+      max-width: 760px;
+      font-family: var(--font-head);
+      font-size: clamp(3.3rem, 5.7vw, 5.9rem);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero-copy__lead {
+      max-width: 680px;
+      margin-bottom: 34px;
+      color: #d8d8d8;
+      font-size: clamp(1.06rem, 1.45vw, 1.32rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 12px 18px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: rgba(255,255,255,0.035);
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover {
+      border-color: rgba(217, 232, 18, 0.46);
+      background: rgba(217, 232, 18, 0.075);
+    }
+
+    .hero-visual {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(to right, rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-color: rgba(0,0,0,0.22);
+      box-shadow:
+        0 28px 80px rgba(0,0,0,0.36),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    .hero-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000;
+    }
+
+    .hero-visual__caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 11px 20px;
+      border-top: 1px solid var(--line-soft);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(255,255,255,0.018);
+    }
+
+    .stat {
+      padding: 24px;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat__value {
+      margin-bottom: 8px;
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .stat__label { font-size: 0.68rem; }
+
+    .product-section {
+      position: relative;
+      padding: 96px 0;
+      border-bottom: 1px solid var(--line-soft);
+      overflow: hidden;
+    }
+
+    #product {
+      margin: 32px 0 0;
+      background:
+        radial-gradient(circle at 18% 42%, rgba(217, 232, 18, 0.07), transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.016) 50%, rgba(0, 0, 0, 0.24));
+      border-top: 1px solid rgba(255, 255, 255, 0.085);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        inset 0 -40px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    #product::before {
+      opacity: 0.42;
+      mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+    }
+
+    .product-section__header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(300px, 0.7fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 0.76rem;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      max-width: 760px;
+      font-family: var(--font-head);
+      font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: #d0d0d0;
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    .spec-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .spec-table,
+    .capabilities {
+      border: 1px solid var(--line-soft);
+      background: rgba(255,255,255,0.022);
+    }
+
+    .spec-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line-soft);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row span:first-child { color: var(--muted); }
+    .spec-row span:last-child { text-align: right; }
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capability {
+      padding: 24px;
+      border-right: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .capability:nth-child(2n) { border-right: none; }
+    .capability:nth-last-child(-n + 2) { border-bottom: none; }
+
+    .capability__index {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 0.68rem;
+      color: rgba(217, 232, 18, 0.68);
+    }
+
+    .capability h3 {
+      margin-bottom: 12px;
+      font-family: var(--font-head);
+      font-size: 1.22rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .capability p {
+      margin-bottom: 0;
+      color: #cfcfcf;
+      line-height: 1.7;
+    }
+
+    /* ── mobile nav ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+    .nav-toggle:hover { border-color: var(--text); color: var(--text); }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(12, 12, 12, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
+      z-index: 48;
+    }
+    .mobile-nav.is-open { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover,
+    .mobile-nav a[aria-current="page"] { color: var(--text); }
+
+    @media (max-width: 680px) {
+      .nav-toggle { display: block; }
+    }
+
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .footer__inner {
+      width: var(--page);
+      margin: 0 auto;
+      padding: 52px 0 32px;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: start;
+    }
+
+    .footer__brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer__logo-link { display: inline-flex; }
+
+    .footer__logo {
+      height: 26px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer__tagline {
+      margin: 0;
+      max-width: 34ch;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      line-height: 1.75;
+      text-transform: uppercase;
+    }
+
+    .footer__nav-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer__nav-col a:hover { color: var(--text); }
+
+    .footer__doc-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+    }
+
+    .footer__doc-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-soft);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .footer__doc-row span:first-child { color: var(--muted); }
+    .footer__doc-row span:last-child { text-align: right; }
+
+    .footer__bottom {
+      padding-top: 24px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__privacy-link {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__privacy-link:hover { color: var(--text); }
+
+    @media (max-width: 980px) {
+      .product-hero,
+      .product-section__header,
+      .spec-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-strip,
+      .capabilities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      :root {
+        --page: min(100vw - 24px, 1500px);
+        --grid-size: 28px;
+      }
+
+      html { scroll-padding-top: 180px; }
+
+      .topbar__inner {
+        min-height: 60px;
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .topbar__right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav { display: none; }
+
+      .product-hero {
+        min-height: auto;
+        padding: 48px 0 40px;
+        gap: 34px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: 2.45rem;
+        line-height: 1.04;
+      }
+
+      .hero-copy__lead {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .hero-visual,
+      .hero-video {
+        min-height: 320px;
+        height: 320px;
+      }
+
+      .hero-visual__caption {
+        padding: 0 18px 18px;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .stat-strip,
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
+
+      .stat,
+      .capability {
+        border-right: none;
+      }
+
+      .capability:nth-last-child(2) { border-bottom: 1px solid var(--line-soft); }
+
+      .product-section { padding: 70px 0; }
+
+      .spec-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .spec-row span:last-child { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <a href="/" class="brand" aria-label="Tenet Industries">
+        <img src="/src/assets/logo.svg" alt="Tenet Industries" class="brand__logo" />
+      </a>
+
+      <div class="topbar__right">
+        <nav class="nav">
+          <a href="/">Home</a>
+          <div class="nav__item">
+            <span>Products</span>
+            <div class="nav__dropdown">
+              <div class="nav__dropdown-inner">
+                <a href="/product/midsummer" aria-current="page">Midsummer</a>
+                <a href="/product/tenetlrs">TenetTX</a>
+              </div>
+            </div>
+          </div>
+          <a href="/contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="/">Home</a>
+        <a href="/product/midsummer" aria-current="page">Midsummer</a>
+        <a href="/product/tenetlrs">TenetTX</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="page-width">
+      <header class="product-hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Product / FPV strike drone</span>
+          <canvas
+            class="text-canvas pixel-reveal"
+            style="margin-bottom: 24px;"
+            data-text="Midsummer"
+            data-font-size="88"
+            data-max-width="760"
+            data-reveal="time"
+            data-duration="800"
+          ></canvas>
+          <canvas
+            class="text-canvas pixel-reveal"
+            style="margin-bottom: 34px;"
+            data-text="A low-cost quadcopter platform built around fast assembly, purpose-built hardware, and a proprietary software stack designed to reduce final unit cost."
+            data-font-size="22"
+            data-max-width="680"
+            data-weight="400"
+            data-line-height="1.7"
+            data-reveal="time"
+            data-duration="1200"
+          ></canvas>
+          <div class="hero-actions">
+            <a class="button" href="#product">Product details</a>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Drone product footage">
+          <video
+            class="hero-video"
+            src="/tenet_website.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          ></video>
+          <div class="hero-visual__caption">
+            <span>Midsummer platform</span>
+            <span>Drone footage</span>
+          </div>
+        </aside>
+      </header>
+
+      <section class="stat-strip" aria-label="Drone key specifications">
+
+        <div class="stat">
+          <div class="stat__value">1.5kg</div>
+          <div class="stat__label">Payload</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">20min</div>
+          <div class="stat__label">Flight time without payload</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">&lt;2min</div>
+          <div class="stat__label">Assembly time</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="product-section" id="product">
+      <div class="page-width product-section__inner">
+        <div class="product-section__header">
+          <div>
+            <span class="section-label">Product</span>
+            <canvas
+              class="text-canvas pixel-reveal"
+              data-text="Built for cost, speed, and repeatable production"
+              data-font-size="68"
+              data-max-width="760"
+              data-reveal="scroll"
+            ></canvas>
+          </div>
+          <div>
+            <canvas
+              class="text-canvas pixel-reveal"
+              data-text="The FPV drone combines simple mechanical assembly with a modified ELRS radio system and mission-specific hardware. The result is a product intended for rapid manufacturing and field-ready deployment."
+              data-font-size="18"
+              data-max-width="600"
+              data-weight="400"
+              data-line-height="1.75"
+              data-reveal="scroll"
+            ></canvas>
+          </div>
+        </div>
+
+        <div class="spec-layout">
+          <div class="spec-table">
+            <div class="spec-row">
+              <span>Propellers</span>
+              <span>7 inches</span>
+            </div>
+            <div class="spec-row">
+              <span>Range</span>
+              <span>~20 km</span>
+            </div>
+            <div class="spec-row">
+              <span>Payload</span>
+              <span>2 kg</span>
+            </div>
+            <div class="spec-row">
+              <span>Flight time</span>
+              <span>30 min without payload</span>
+            </div>
+            <div class="spec-row">
+              <span>Radio system</span>
+              <span>TenetLRS</span>
+            </div>
+            <div class="spec-row">
+              <span>Cost position</span>
+              <span>Almost half the cost of Brave1 drones</span>
+            </div>
+          </div>
+
+          <div class="capabilities">
+            <article class="capability">
+              <span class="capability__index">01</span>
+              <h3>Production speed</h3>
+              <p>Design-for-automation creates non-complex products that are fast to manufacture and assemble with all components included.</p>
+            </article>
+            <article class="capability">
+              <span class="capability__index">02</span>
+              <h3>Modular software</h3>
+              <p>A proprietary software platform provides the foundation for the FPV drone and future low-cost fixed-wing and missile systems.</p>
+            </article>
+            <article class="capability">
+              <span class="capability__index">03</span>
+              <h3>Purpose-built hardware</h3>
+              <p>Hardware is designed around the specific mission profile rather than adapted from a generic platform.</p>
+            </article>
+            <article class="capability">
+              <span class="capability__index">04</span>
+              <h3>Distributed manufacturing</h3>
+              <p>The product is built for dispersed production and rapid scalability toward million-unit FPV drone manufacturing.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
+            <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
+          </a>
+          <p class="footer__tagline">Low-cost massproducible defense systems</p>
+        </div>
+        <nav class="footer__nav-col">
+          <a href="/">Home</a>
+          <a href="/product/midsummer">Midsummer</a>
+          <a href="/product/tenetlrs">TenetTX</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="footer__doc-col">
+          <div class="footer__doc-row">
+            <span>Company</span>
+            <span>Tenet Industries</span>
+          </div>
+          <div class="footer__doc-row">
+            <span>Backed by</span>
+            <span>Y Combinator</span>
+          </div>
+          <div class="footer__doc-row">
+            <span>Offices</span>
+            <span>Stockholm · San Francisco</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Tenet Industries</span>
+        <a href="/privacy" class="footer__privacy-link">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let textBlocks = [];
+
+    class PixelRevealText {
+      constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.offscreen = document.createElement('canvas');
+        this.offCtx = this.offscreen.getContext('2d');
+        this.tinyCanvas = document.createElement('canvas');
+        this.tinyCtx = this.tinyCanvas.getContext('2d');
+
+        this.text = canvas.dataset.text || '';
+        this.baseFontSize = Number(canvas.dataset.fontSize || 48);
+        this.fontSize = this.baseFontSize;
+        this.maxWidth = Number(canvas.dataset.maxWidth || 800);
+        this.fontWeight = canvas.dataset.weight || '800';
+        this.lineHeight = Number(canvas.dataset.lineHeight || 1.2);
+        this.revealMode = canvas.dataset.reveal || 'scroll';
+        this.duration = Number(canvas.dataset.duration || 1000);
+
+        this.color = getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
+        this.fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--font-head').trim();
+        this.bodyFamily = getComputedStyle(document.documentElement).getPropertyValue('--font-body').trim();
+
+        this.initialPixelSize =
+          (this.baseFontSize >= 100 ? 34 : this.baseFontSize >= 50 ? 24 : 16) * (window.devicePixelRatio || 1);
+        this.pixelSize = this.initialPixelSize;
+        this.targetPixelSize = this.initialPixelSize;
+        this.padding = 18;
+        this.startTime = performance.now();
+        this.resize();
+      }
+
+      getFontFamily() {
+        return this.baseFontSize <= 30 ? this.bodyFamily : this.fontFamily;
+      }
+
+      wrapText(ctx, text, maxWidth) {
+        const words = text.split(' ');
+        const lines = [];
+        let current = '';
+        for (const word of words) {
+          const test = current ? `${current} ${word}` : word;
+          if (ctx.measureText(test).width <= maxWidth || !current) {
+            current = test;
+          } else {
+            lines.push(current);
+            current = word;
+          }
+        }
+        if (current) lines.push(current);
+        return lines;
+      }
+
+      resize() {
+        const container = this.canvas.parentElement;
+        const parentWidth = container.clientWidth;
+        const mobile = window.innerWidth < 680;
+
+        this.fontSize = mobile
+          ? Math.min(this.baseFontSize, this.baseFontSize >= 100 ? 74 : this.baseFontSize >= 50 ? 44 : 20)
+          : this.baseFontSize;
+
+        const fontFamily = this.getFontFamily();
+        const innerWidth = Math.max(120, Math.min(this.maxWidth, parentWidth));
+        const measure = document.createElement('canvas').getContext('2d');
+        measure.font = `${this.fontWeight} ${this.fontSize}px ${fontFamily}`;
+        measure.textBaseline = 'alphabetic';
+
+        const contentWidth = Math.max(80, innerWidth - this.padding * 2);
+        const lines = this.wrapText(measure, this.text, contentWidth);
+        const metrics = measure.measureText('Mg');
+        const ascent = Math.ceil(metrics.actualBoundingBoxAscent || this.fontSize * 0.8);
+        const descent = Math.ceil(metrics.actualBoundingBoxDescent || this.fontSize * 0.2);
+        const lineBox = Math.ceil((ascent + descent) * this.lineHeight);
+        const cssHeight = Math.max(40, lines.length * lineBox + this.padding * 2);
+        const cssWidth = innerWidth;
+        const dpr = window.devicePixelRatio || 1;
+        const physW = Math.round(cssWidth * dpr);
+        const physH = Math.round(cssHeight * dpr);
+
+        this.canvas.width = physW;
+        this.canvas.height = physH;
+        this.canvas.style.width = `${cssWidth}px`;
+        this.canvas.style.height = `${cssHeight}px`;
+
+        this.offscreen.width = physW;
+        this.offscreen.height = physH;
+
+        const ctx = this.offCtx;
+        ctx.clearRect(0, 0, physW, physH);
+        ctx.fillStyle = this.color;
+        ctx.textBaseline = 'alphabetic';
+        ctx.textAlign = 'left';
+        ctx.font = `${this.fontWeight} ${this.fontSize * dpr}px ${fontFamily}`;
+
+        lines.forEach((line, index) => {
+          const y = Math.round((this.padding + ascent + index * lineBox) * dpr);
+          ctx.fillText(line, Math.round(this.padding * dpr), y);
+        });
+
+        this.draw();
+      }
+
+      setScrollProgress(progress) {
+        if (this.revealMode !== 'scroll') return;
+        const eased = 1 - Math.pow(1 - progress, 3);
+        this.targetPixelSize = Math.max(1, this.initialPixelSize * (1 - eased));
+      }
+
+      update(now) {
+        if (this.revealMode === 'time') {
+          const t = Math.min((now - this.startTime) / this.duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          this.targetPixelSize = Math.max(1, this.initialPixelSize * (1 - eased));
+        }
+        this.pixelSize += (this.targetPixelSize - this.pixelSize) * 0.14;
+        if (Math.abs(this.pixelSize - this.targetPixelSize) < 0.08) {
+          this.pixelSize = this.targetPixelSize;
+        }
+        this.draw();
+      }
+
+      draw() {
+        const w = this.canvas.width;
+        const h = this.canvas.height;
+        this.ctx.clearRect(0, 0, w, h);
+        const scaledW = Math.max(1, Math.ceil(w / Math.max(1, this.pixelSize)));
+        const scaledH = Math.max(1, Math.ceil(h / Math.max(1, this.pixelSize)));
+        const tinyPad = 2;
+        const tinyW = scaledW + tinyPad * 2;
+        const tinyH = scaledH + tinyPad * 2;
+        if (this.tinyCanvas.width !== tinyW || this.tinyCanvas.height !== tinyH) {
+          this.tinyCanvas.width = tinyW;
+          this.tinyCanvas.height = tinyH;
+        }
+        this.tinyCtx.clearRect(0, 0, tinyW, tinyH);
+        this.tinyCtx.imageSmoothingEnabled = false;
+        this.tinyCtx.drawImage(this.offscreen, 0, 0, w, h, tinyPad, tinyPad, scaledW, scaledH);
+        this.ctx.imageSmoothingEnabled = false;
+        this.ctx.drawImage(this.tinyCanvas, 0, 0, tinyW, tinyH, 0, 0, w, h);
+      }
+    }
+
+    function destroyTextBlocks() { textBlocks = []; }
+
+    function initTextBlocks() {
+      destroyTextBlocks();
+      textBlocks = Array.from(document.querySelectorAll('.pixel-reveal')).map(
+        (canvas) => new PixelRevealText(canvas)
+      );
+    }
+
+    async function waitForFont(spec, maxWait = 4000) {
+      const deadline = Date.now() + maxWait;
+      while (Date.now() < deadline) {
+        const loaded = await document.fonts.load(spec);
+        if (loaded.length > 0) return;
+        await new Promise(r => setTimeout(r, 50));
+      }
+    }
+
+    function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+
+    function updateScrollRevealTargets() {
+      textBlocks.forEach((block) => {
+        if (block.revealMode !== 'scroll') return;
+        const rect = block.canvas.getBoundingClientRect();
+        const start = window.innerHeight * 0.94;
+        const end = window.innerHeight * 0.38;
+        const progress = clamp((start - rect.top) / (start - end), 0, 1);
+        block.setScrollProgress(progress);
+      });
+    }
+
+    function animate(now) {
+      updateScrollRevealTargets();
+      textBlocks.forEach((block) => block.update(now));
+      requestAnimationFrame(animate);
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { textBlocks.forEach((block) => block.resize()); }, 80);
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('is-open');
+        navToggle.textContent = open ? 'Close' : 'Menu';
+        navToggle.setAttribute('aria-expanded', open);
+      });
+      mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('is-open');
+          navToggle.textContent = 'Menu';
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    waitForFont('800 1em Oxanium').then(() => {
+      initTextBlocks();
+      updateScrollRevealTargets();
+      requestAnimationFrame(animate);
+    });
+  </script>
+</body>
+</html>

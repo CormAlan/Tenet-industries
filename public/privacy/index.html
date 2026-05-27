@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy – Tenet Industries</title>
-  <meta property="og:title" content="Privacy Policy – Tenet Industries" />
+  <meta property="og:title" content="Privacy Policy - Tenet Industries" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tenetindustries.com/privacy" />
   <meta property="og:image" content="https://tenetindustries.com/src/assets/Tenet_OG.png" />
@@ -95,6 +95,56 @@
 
     .nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
 
+    .nav__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__item > span {
+      cursor: default;
+      color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .nav__item:hover > span { color: var(--text); }
+
+    .nav__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      padding-top: 12px;
+    }
+
+    .nav__item:hover .nav__dropdown { display: block; }
+
+    .nav__dropdown-inner {
+      background: rgba(12, 12, 12, 0.98);
+      border: 1px solid var(--line-soft);
+      backdrop-filter: blur(12px);
+      min-width: 148px;
+    }
+
+    .nav__dropdown a {
+      display: block;
+      padding: 10px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+
+    .nav__dropdown a:last-child { border-bottom: none; }
+    .nav__dropdown a:hover,
+    .nav__dropdown a[aria-current="page"] { color: var(--text); }
+
     .nav-toggle {
       display: none;
       background: none;
@@ -124,27 +174,6 @@
     .mobile-nav a { color: var(--muted); }
     .mobile-nav a:hover { color: var(--text); }
     .mobile-nav.is-open { display: flex; }
-
-    .language-switcher { display: flex; align-items: center; }
-
-    .language-switcher__flags {
-      display: flex;
-      gap: 8px;
-    }
-
-    .language-flag {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      opacity: 0.4;
-      transition: opacity 0.2s ease;
-      display: flex;
-      align-items: center;
-    }
-
-    .language-flag img { width: 20px; height: 14px; object-fit: cover; display: block; }
-    .language-flag.active, .language-flag:hover { opacity: 1; }
 
     /* ── Privacy content ── */
     .privacy-page {
@@ -333,35 +362,26 @@
 
       <div class="topbar__right">
         <nav class="nav">
-          <a href="/#section-1" data-i18n="nav.platform"></a>
-          <a href="/product" data-i18n="nav.product"></a>
-          <a href="/#section-2" data-i18n="nav.systems"></a>
-          <a href="/#section-3" data-i18n="nav.doctrine"></a>
-          <a href="/contact" data-i18n="nav.contact"></a>
+          <a href="/">Home</a>
+          <div class="nav__item">
+            <span>Products</span>
+            <div class="nav__dropdown">
+              <div class="nav__dropdown-inner">
+                <a href="/product/midsummer">Midsummer</a>
+                <a href="/product/tenetlrs">TenetTX</a>
+              </div>
+            </div>
+          </div>
+          <a href="/contact">Contact</a>
         </nav>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-
-        <div class="language-switcher" aria-label="Language selector">
-          <div class="language-switcher__flags" id="language-select" role="group">
-            <button type="button" class="language-flag" data-lang="en" aria-label="English">
-              <img src="/src/assets/en.png" alt="English" />
-            </button>
-            <button type="button" class="language-flag" data-lang="sv" aria-label="Swedish">
-              <img src="/src/assets/sv.svg" alt="Swedish" />
-            </button>
-            <button type="button" class="language-flag" data-lang="uk" aria-label="Ukrainian">
-              <img src="/src/assets/uk.png" alt="Ukrainian" />
-            </button>
-          </div>
-        </div>
       </div>
     </div>
     <nav class="mobile-nav" id="mobile-nav">
-      <a href="/#section-1" data-i18n="nav.platform"></a>
-      <a href="/product" data-i18n="nav.product"></a>
-      <a href="/#section-2" data-i18n="nav.systems"></a>
-      <a href="/#section-3" data-i18n="nav.doctrine"></a>
-      <a href="/contact" data-i18n="nav.contact"></a>
+      <a href="/">Home</a>
+      <a href="/product/midsummer">Midsummer</a>
+      <a href="/product/tenetlrs">TenetTX</a>
+      <a href="/contact">Contact</a>
     </nav>
   </div>
 
@@ -431,97 +451,37 @@
           <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
             <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
           </a>
-          <p class="footer__tagline" data-i18n="footer.tagline"></p>
+          <p class="footer__tagline">Low-cost massproducible defense systems</p>
         </div>
         <nav class="footer__nav-col">
-          <a href="/#section-1" data-i18n="nav.platform"></a>
-          <a href="/product" data-i18n="nav.product"></a>
-          <a href="/#section-2" data-i18n="nav.systems"></a>
-          <a href="/#section-3" data-i18n="nav.doctrine"></a>
-          <a href="/contact" data-i18n="nav.contact"></a>
+          <a href="/">Home</a>
+          <a href="/product/midsummer">Midsummer</a>
+          <a href="/product/tenetlrs">TenetTX</a>
+          <a href="/contact">Contact</a>
         </nav>
         <div class="footer__doc-col">
           <div class="footer__doc-row">
-            <span data-i18n="footer.docCompany"></span>
+            <span>Company</span>
             <span>Tenet Industries</span>
           </div>
           <div class="footer__doc-row">
-            <span data-i18n="footer.docBacked"></span>
+            <span>Backed by</span>
             <span>Y Combinator</span>
+          </div>
+          <div class="footer__doc-row">
+            <span>Offices</span>
+            <span>Stockholm · San Francisco</span>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span data-i18n="footer.copyright"></span>
-        <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link" aria-current="page"></a>
+        <span>© 2026 Tenet Industries</span>
+        <a href="/privacy" class="footer__privacy-link" aria-current="page">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
-    const ENABLED_LANGUAGES = ['en', 'sv'];
-    const DEFAULT_LANGUAGE = 'en';
-    const LOCALE_PATHS = {
-      en: '../locales/en.json',
-      sv: '../locales/sv.json',
-      uk: '../locales/uk.json'
-    };
-
-    let translations = {};
-
-    function getNestedValue(object, path) {
-      return path.split('.').reduce((acc, key) => {
-        if (acc && Object.prototype.hasOwnProperty.call(acc, key)) return acc[key];
-        return undefined;
-      }, object);
-    }
-
-    function t(key) {
-      const value = getNestedValue(translations, key);
-      return typeof value === 'string' ? value : key;
-    }
-
-    async function loadTranslations(language) {
-      const response = await fetch(LOCALE_PATHS[language]);
-      if (!response.ok) throw new Error(`Failed to load translations for ${language}`);
-      return response.json();
-    }
-
-    function applyTranslations() {
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
-        el.textContent = t(el.dataset.i18n);
-      });
-      document.documentElement.lang = localStorage.getItem('preferred-language') || DEFAULT_LANGUAGE;
-      const switcher = document.getElementById('language-select');
-      if (switcher) switcher.setAttribute('aria-label', t('language.ariaLabel'));
-    }
-
-    async function setLanguage(language) {
-      const safe = SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-      translations = await loadTranslations(safe);
-      localStorage.setItem('preferred-language', safe);
-      document.querySelectorAll('.language-flag').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.lang === safe);
-      });
-      applyTranslations();
-    }
-
-    function getInitialLanguage() {
-      const stored = localStorage.getItem('preferred-language');
-      if (ENABLED_LANGUAGES.includes(stored)) return stored;
-      const browser = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
-      return ENABLED_LANGUAGES.includes(browser) ? browser : DEFAULT_LANGUAGE;
-    }
-
-    document.querySelectorAll('.language-flag').forEach((btn) => {
-      if (!ENABLED_LANGUAGES.includes(btn.dataset.lang)) {
-        btn.style.display = 'none';
-        return;
-      }
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-    });
-
     const navToggle = document.querySelector('.nav-toggle');
     const mobileNav = document.getElementById('mobile-nav');
     if (navToggle && mobileNav) {
@@ -538,8 +498,6 @@
         });
       });
     }
-
-    setLanguage(getInitialLanguage()).catch(() => setLanguage(DEFAULT_LANGUAGE));
   </script>
 </body>
 </html>

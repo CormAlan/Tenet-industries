@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>window.location.replace('/product/midsummer');</script>
   <script defer src="/_vercel/insights/script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -98,37 +99,55 @@
     .nav a:hover,
     .nav a[aria-current="page"] { color: var(--text); }
 
-    .language-switcher__flags {
+    .nav__item {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 8px;
     }
 
-    .language-flag {
-      background: rgba(255,255,255,0.04);
+    .nav__item > span {
+      cursor: default;
+      color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .nav__item:hover > span { color: var(--text); }
+
+    .nav__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      padding-top: 12px;
+    }
+
+    .nav__item:hover .nav__dropdown { display: block; }
+
+    .nav__dropdown-inner {
+      background: rgba(12, 12, 12, 0.98);
       border: 1px solid var(--line-soft);
-      padding: 4px;
-      width: 38px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(12px);
+      min-width: 148px;
     }
 
-    .language-flag:hover,
-    .language-flag.active {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .language-flag img {
+    .nav__dropdown a {
       display: block;
-      width: 22px;
-      height: 16px;
-      object-fit: cover;
+      padding: 10px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+      transition: color 0.18s ease;
     }
+
+    .nav__dropdown a:last-child { border-bottom: none; }
+    .nav__dropdown a:hover,
+    .nav__dropdown a[aria-current="page"] { color: var(--text); }
 
     .page-width {
       width: var(--page);
@@ -737,34 +756,25 @@
 
       <div class="topbar__right">
         <nav class="nav">
-          <a href="/#section-1" data-i18n="nav.platform"></a>
-          <a href="/product" data-i18n="nav.product" aria-current="page"></a>
-          <a href="/#section-2" data-i18n="nav.systems"></a>
-          <a href="/#section-3" data-i18n="nav.doctrine"></a>
-          <a href="/contact" data-i18n="nav.contact"></a>
+          <a href="/">Home</a>
+          <div class="nav__item">
+            <span>Products</span>
+            <div class="nav__dropdown">
+              <div class="nav__dropdown-inner">
+                <a href="/product/midsummer">Midsummer</a>
+                <a href="/product/tenetlrs">TenetTX</a>
+              </div>
+            </div>
+          </div>
+          <a href="/contact">Contact</a>
         </nav>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-
-        <div class="language-switcher" aria-label="Language selector">
-          <div class="language-switcher__flags" id="language-select" role="group">
-            <button type="button" class="language-flag" data-lang="en" aria-label="English">
-              <img src="/src/assets/en.png" alt="English" />
-            </button>
-            <button type="button" class="language-flag" data-lang="sv" aria-label="Swedish">
-              <img src="/src/assets/sv.svg" alt="Swedish" />
-            </button>
-            <button type="button" class="language-flag" data-lang="uk" aria-label="Ukrainian">
-              <img src="/src/assets/uk.png" alt="Ukrainian" />
-            </button>
-          </div>
-        </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav">
-        <a href="/#section-1" data-i18n="nav.platform"></a>
-        <a href="/product" data-i18n="nav.product"></a>
-        <a href="/#section-2" data-i18n="nav.systems"></a>
-        <a href="/#section-3" data-i18n="nav.doctrine"></a>
-        <a href="/contact" data-i18n="nav.contact"></a>
+        <a href="/">Home</a>
+        <a href="/product/midsummer">Midsummer</a>
+        <a href="/product/tenetlrs">TenetTX</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
   </div>
@@ -773,12 +783,12 @@
     <div class="page-width">
       <header class="product-hero">
         <div class="hero-copy">
-          <span class="eyebrow" data-i18n="product.hero.eyebrow"></span>
-          <h1 data-i18n="product.hero.title"></h1>
-          <p class="hero-copy__lead" data-i18n="product.hero.copy"></p>
+          <span class="eyebrow">Product / FPV drone</span>
+          <h1>FPV strike drone</h1>
+          <p class="hero-copy__lead">A low-cost quadcopter platform built around fast assembly, purpose-built hardware, and a proprietary software stack designed to reduce final unit cost.</p>
           <div class="hero-actions">
-            <a class="button" href="#product" data-i18n="product.hero.productCta"></a>
-            <a class="button" href="#roadmap" data-i18n="product.hero.roadmapCta"></a>
+            <a class="button" href="#product">Product details</a>
+            <a class="button" href="#roadmap">Roadmap</a>
           </div>
         </div>
 
@@ -793,28 +803,28 @@
             preload="auto"
           ></video>
           <div class="hero-visual__caption">
-            <span data-i18n="product.hero.modelLabel"></span>
-            <span data-i18n="product.hero.modelStatus"></span>
+            <span>RAF1 platform</span>
+            <span>Drone footage</span>
           </div>
         </aside>
       </header>
 
       <section class="stat-strip" aria-label="Drone key specifications">
         <div class="stat">
-          <div class="stat__value" data-i18n="product.stats.range.value"></div>
-          <div class="stat__label" data-i18n="product.stats.range.label"></div>
+          <div class="stat__value">~20km</div>
+          <div class="stat__label">Operational range</div>
         </div>
         <div class="stat">
-          <div class="stat__value" data-i18n="product.stats.payload.value"></div>
-          <div class="stat__label" data-i18n="product.stats.payload.label"></div>
+          <div class="stat__value">2kg</div>
+          <div class="stat__label">Payload</div>
         </div>
         <div class="stat">
-          <div class="stat__value" data-i18n="product.stats.flight.value"></div>
-          <div class="stat__label" data-i18n="product.stats.flight.label"></div>
+          <div class="stat__value">30min</div>
+          <div class="stat__label">Flight time without payload</div>
         </div>
         <div class="stat">
-          <div class="stat__value" data-i18n="product.stats.assembly.value"></div>
-          <div class="stat__label" data-i18n="product.stats.assembly.label"></div>
+          <div class="stat__value">&lt;2min</div>
+          <div class="stat__label">Assembly time</div>
         </div>
       </section>
     </div>
@@ -823,100 +833,66 @@
       <div class="page-width product-section__inner">
         <div class="product-section__header">
           <div>
-            <span class="section-label" data-i18n="product.productSection.label"></span>
-            <h2 data-i18n="product.productSection.title"></h2>
+            <span class="section-label">Product</span>
+            <h2>Built for cost, speed, and repeatable production</h2>
           </div>
-          <p class="section-intro" data-i18n="product.productSection.copy"></p>
+          <p class="section-intro">The FPV drone combines simple mechanical assembly with a modified ELRS radio system and mission-specific hardware. The result is a product intended for rapid manufacturing and field-ready deployment.</p>
         </div>
 
         <div class="spec-layout">
           <div class="spec-table">
             <div class="spec-row">
-              <span data-i18n="product.specs.propellers.label"></span>
-              <span data-i18n="product.specs.propellers.value"></span>
+              <span>Propellers</span>
+              <span>7 inches</span>
             </div>
             <div class="spec-row">
-              <span data-i18n="product.specs.range.label"></span>
-              <span data-i18n="product.specs.range.value"></span>
+              <span>Range</span>
+              <span>~20 km</span>
             </div>
             <div class="spec-row">
-              <span data-i18n="product.specs.payload.label"></span>
-              <span data-i18n="product.specs.payload.value"></span>
+              <span>Payload</span>
+              <span>2 kg</span>
             </div>
             <div class="spec-row">
-              <span data-i18n="product.specs.flight.label"></span>
-              <span data-i18n="product.specs.flight.value"></span>
+              <span>Flight time</span>
+              <span>30 min without payload</span>
             </div>
             <div class="spec-row">
-              <span data-i18n="product.specs.radio.label"></span>
-              <span data-i18n="product.specs.radio.value"></span>
+              <span>Radio system</span>
+              <span>Encrypted wideband long range radio</span>
             </div>
             <div class="spec-row">
-              <span data-i18n="product.specs.cost.label"></span>
-              <span data-i18n="product.specs.cost.value"></span>
+              <span>Cost position</span>
+              <span>Almost half the cost of Brave1 drones</span>
             </div>
           </div>
 
           <div class="capabilities">
             <article class="capability">
               <span class="capability__index">01</span>
-              <h3 data-i18n="product.capabilities.production.title"></h3>
-              <p data-i18n="product.capabilities.production.copy"></p>
+              <h3>Production speed</h3>
+              <p>Design-for-automation creates non-complex products that are fast to manufacture and assemble with all components included.</p>
             </article>
             <article class="capability">
               <span class="capability__index">02</span>
-              <h3 data-i18n="product.capabilities.software.title"></h3>
-              <p data-i18n="product.capabilities.software.copy"></p>
+              <h3>Modular software</h3>
+              <p>A proprietary software platform provides the foundation for the FPV drone and future low-cost fixed-wing and missile systems.</p>
             </article>
             <article class="capability">
               <span class="capability__index">03</span>
-              <h3 data-i18n="product.capabilities.hardware.title"></h3>
-              <p data-i18n="product.capabilities.hardware.copy"></p>
+              <h3>Purpose-built hardware</h3>
+              <p>Hardware is designed around the specific mission profile rather than adapted from a generic platform.</p>
             </article>
             <article class="capability">
               <span class="capability__index">04</span>
-              <h3 data-i18n="product.capabilities.manufacturing.title"></h3>
-              <p data-i18n="product.capabilities.manufacturing.copy"></p>
+              <h3>Distributed manufacturing</h3>
+              <p>The product is built for dispersed production and rapid scalability toward million-unit FPV drone manufacturing.</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="product-section" id="roadmap">
-      <div class="page-width product-section__inner">
-        <div class="product-section__header">
-          <div>
-            <span class="section-label" data-i18n="product.roadmapSection.label"></span>
-            <h2 data-i18n="product.roadmapSection.title"></h2>
-          </div>
-          <p class="section-intro" data-i18n="product.roadmapSection.copy"></p>
-        </div>
-
-        <div class="roadmap">
-          <article class="roadmap__item roadmap__item--now">
-            <span class="roadmap__phase" data-i18n="product.roadmap.fpv.phase"></span>
-            <h3 data-i18n="product.roadmap.fpv.title"></h3>
-            <p data-i18n="product.roadmap.fpv.copy"></p>
-          </article>
-          <article class="roadmap__item roadmap__item--next">
-            <span class="roadmap__phase" data-i18n="product.roadmap.fixed.phase"></span>
-            <h3 data-i18n="product.roadmap.fixed.title"></h3>
-            <p data-i18n="product.roadmap.fixed.copy"></p>
-          </article>
-          <article class="roadmap__item roadmap__item--dev">
-            <span class="roadmap__phase" data-i18n="product.roadmap.autonomy.phase"></span>
-            <h3 data-i18n="product.roadmap.autonomy.title"></h3>
-            <p data-i18n="product.roadmap.autonomy.copy"></p>
-          </article>
-          <article class="roadmap__item roadmap__item--future">
-            <span class="roadmap__phase" data-i18n="product.roadmap.swarm.phase"></span>
-            <h3 data-i18n="product.roadmap.swarm.title"></h3>
-            <p data-i18n="product.roadmap.swarm.copy"></p>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -926,107 +902,37 @@
           <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
             <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
           </a>
-          <p class="footer__tagline" data-i18n="footer.tagline"></p>
+          <p class="footer__tagline">Low-cost massproducible defense systems</p>
         </div>
         <nav class="footer__nav-col">
-          <a href="/#section-1" data-i18n="nav.platform"></a>
-          <a href="/product" data-i18n="nav.product"></a>
-          <a href="/#section-2" data-i18n="nav.systems"></a>
-          <a href="/#section-3" data-i18n="nav.doctrine"></a>
-          <a href="/contact" data-i18n="nav.contact"></a>
+          <a href="/">Home</a>
+          <a href="/product/midsummer">Midsummer</a>
+          <a href="/product/tenetlrs">TenetTX</a>
+          <a href="/contact">Contact</a>
         </nav>
         <div class="footer__doc-col">
           <div class="footer__doc-row">
-            <span data-i18n="footer.docCompany"></span>
+            <span>Company</span>
             <span>Tenet Industries</span>
           </div>
           <div class="footer__doc-row">
-            <span data-i18n="footer.docBacked"></span>
+            <span>Backed by</span>
             <span>Y Combinator</span>
+          </div>
+          <div class="footer__doc-row">
+            <span>Offices</span>
+            <span>Stockholm · San Francisco</span>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span data-i18n="footer.copyright"></span>
-        <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link"></a>
+        <span>© 2026 Tenet Industries</span>
+        <a href="/privacy" class="footer__privacy-link">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
-    const ENABLED_LANGUAGES = ['en', 'sv']; // add 'uk' to re-enable Ukrainian
-    const DEFAULT_LANGUAGE = 'en';
-    const LOCALE_PATHS = {
-      en: '../locales/en.json',
-      sv: '../locales/sv.json',
-      uk: '../locales/uk.json'
-    };
-
-    let translations = {};
-
-    function getNestedValue(object, path) {
-      return path.split('.').reduce((acc, key) => {
-        if (acc && Object.prototype.hasOwnProperty.call(acc, key)) {
-          return acc[key];
-        }
-        return undefined;
-      }, object);
-    }
-
-    function t(key) {
-      const value = getNestedValue(translations, key);
-      return typeof value === 'string' ? value : key;
-    }
-
-    async function loadTranslations(language) {
-      const response = await fetch(LOCALE_PATHS[language]);
-      if (!response.ok) {
-        throw new Error(`Failed to load translations for ${language}`);
-      }
-      return response.json();
-    }
-
-    function applyStaticTranslations(language) {
-      document.querySelectorAll('[data-i18n]').forEach((element) => {
-        element.textContent = t(element.dataset.i18n);
-      });
-
-      document.title = t('product.meta.title');
-      document.documentElement.lang = language;
-
-      const switcher = document.getElementById('language-select');
-      switcher.setAttribute('aria-label', t('language.ariaLabel'));
-    }
-
-    async function setLanguage(language) {
-      const safeLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-      translations = await loadTranslations(safeLanguage);
-      localStorage.setItem('preferred-language', safeLanguage);
-      document.querySelectorAll('.language-flag').forEach((button) => {
-        button.classList.toggle('active', button.dataset.lang === safeLanguage);
-      });
-      applyStaticTranslations(safeLanguage);
-    }
-
-    function getInitialLanguage() {
-      const stored = localStorage.getItem('preferred-language');
-      if (ENABLED_LANGUAGES.includes(stored)) return stored;
-
-      const browserLanguage = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
-      return ENABLED_LANGUAGES.includes(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE;
-    }
-
-    document.querySelectorAll('.language-flag').forEach((button) => {
-      if (!ENABLED_LANGUAGES.includes(button.dataset.lang)) {
-        button.style.display = 'none';
-        return;
-      }
-      button.addEventListener('click', async () => {
-        await setLanguage(button.dataset.lang);
-      });
-    });
-
     const navToggle = document.querySelector('.nav-toggle');
     const mobileNav = document.getElementById('mobile-nav');
     if (navToggle && mobileNav) {
@@ -1043,13 +949,6 @@
         });
       });
     }
-
-    setLanguage(getInitialLanguage()).catch(async (error) => {
-      console.error(error);
-      if (getInitialLanguage() !== DEFAULT_LANGUAGE) {
-        await setLanguage(DEFAULT_LANGUAGE);
-      }
-    });
   </script>
 </body>
 </html>

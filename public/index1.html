@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
@@ -109,52 +109,55 @@
 
     .nav a:hover { color: var(--text); }
 
-    .language-switcher {
+    .nav__item {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 10px;
+    }
+
+    .nav__item > span {
+      cursor: default;
       color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    .nav__item:hover > span { color: var(--text); }
+
+    .nav__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      padding-top: 12px;
+    }
+
+    .nav__item:hover .nav__dropdown { display: block; }
+
+    .nav__dropdown-inner {
+      background: rgba(12, 12, 12, 0.98);
+      border: 1px solid var(--line-soft);
+      backdrop-filter: blur(12px);
+      min-width: 148px;
+    }
+
+    .nav__dropdown a {
+      display: block;
+      padding: 10px 16px;
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+      white-space: nowrap;
+      transition: color 0.18s ease;
     }
 
-    .language-switcher__flags {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .language-flag {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line-soft);
-      padding: 4px;
-      width: 38px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-    }
-
-    .language-flag:hover {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .language-flag.active {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .language-flag img {
-      display: block;
-      width: 22px;
-      height: 16px;
-      object-fit: cover;
-    }
+    .nav__dropdown a:last-child { border-bottom: none; }
+    .nav__dropdown a:hover,
+    .nav__dropdown a[aria-current="page"] { color: var(--text); }
 
     .page-width {
       width: var(--page);
@@ -252,7 +255,7 @@
     .section {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 40vw);
+      grid-template-columns: minmax(0, 1fr) minmax(260px, min(40vw, 580px));
       gap: clamp(56px, 6vw, 92px);
       align-items: center;
       padding: 70px 0;
@@ -280,7 +283,7 @@
       z-index: 2;
     }
     .section--reverse {
-      grid-template-columns: minmax(260px, 40vw) minmax(0, 1fr);
+      grid-template-columns: minmax(260px, min(40vw, 580px)) minmax(0, 1fr);
     }
 
     .section::before {
@@ -594,11 +597,6 @@
         height: 26px;
       }
 
-      .language-flag {
-        width: 32px;
-        height: 24px;
-      }
-
       .nav {
         display: none;
       }
@@ -845,37 +843,26 @@
 
         <div class="topbar__right">
           <nav class="nav">
-            <a href="#section-1" data-i18n="nav.platform"></a>
-            <a href="/product" data-i18n="nav.product"></a>
-            <a href="#section-2" data-i18n="nav.systems"></a>
-            <a href="#section-3" data-i18n="nav.doctrine"></a>
-            <a href="/contact" data-i18n="nav.contact"></a>
+            <a href="/">Home</a>
+            <div class="nav__item">
+              <span>Products</span>
+              <div class="nav__dropdown">
+                <div class="nav__dropdown-inner">
+                  <a href="/product/midsummer">Midsummer</a>
+                  <a href="/product/tenetlrs">TenetTX</a>
+                </div>
+              </div>
+            </div>
+            <a href="/contact">Contact</a>
           </nav>
           <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-
-          <div class="language-switcher" aria-label="Language selector">
-            <div class="language-switcher__flags" id="language-select" role="group">
-              <button type="button" class="language-flag" data-lang="en" aria-label="English">
-                <img src="/src/assets/en.png" alt="English" />
-              </button>
-
-              <button type="button" class="language-flag" data-lang="sv" aria-label="Swedish">
-                <img src="/src/assets/sv.svg" alt="Swedish" />
-              </button>
-
-              <button type="button" class="language-flag" data-lang="uk" aria-label="Ukrainian">
-                <img src="/src/assets/uk.png" alt="Ukrainian" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav">
-        <a href="#section-1" data-i18n="nav.platform"></a>
-        <a href="/product" data-i18n="nav.product"></a>
-        <a href="#section-2" data-i18n="nav.systems"></a>
-        <a href="#section-3" data-i18n="nav.doctrine"></a>
-        <a href="/contact" data-i18n="nav.contact"></a>
+        <a href="/">Home</a>
+        <a href="/product/midsummer">Midsummer</a>
+        <a href="/product/tenetlrs">TenetTX</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
 
@@ -894,11 +881,11 @@
           <span class="hud__coords">59°19'N · 18°04'E · ALT 0042M  </span>
         </div>
         <div class="hero__inner">
-          <span class="eyebrow" data-i18n="hero.eyebrow"></span>
+          <span class="eyebrow">Backed by Y Combinator</span>
 
           <canvas
             class="text-canvas hero-title pixel-reveal"
-            data-i18n="hero.title"
+            data-text="Low-cost massproducible defense systems"
             data-font-size="108"
             data-max-width="1100"
             data-reveal="time"
@@ -907,7 +894,7 @@
 
           <canvas
             class="text-canvas hero-copy pixel-reveal"
-            data-i18n="hero.copy"
+            data-text="Using design-for-manufacturing and first principles to reimagine defense, starting with low-cost strike drones."
             data-font-size="24"
             data-max-width="820"
             data-weight="500"
@@ -921,17 +908,17 @@
       <main class="sections">
         <section class="section" id="section-1">
           <div class="section__text">
-            <span class="section__tag" data-i18n="sections.section1.tag"></span>
+            <span class="section__tag">Platform</span>
             <canvas
               class="text-canvas section__title pixel-reveal"
-              data-i18n="sections.section1.title"
+              data-text="FPV Drone"
               data-font-size="58"
               data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
-              data-i18n="sections.section1.body"
+              data-text="Propellers: 7 inches. Range: ~20km. Payload: 2kg. Flight time without payload: 30 minutes. Encrypted long range radio communication with extremely wideband frequency hopping. Assembly time under 2 minutes. Almost half the cost of Brave1 drones."
               data-font-size="22"
               data-max-width="700"
               data-weight="500"
@@ -939,7 +926,7 @@
               data-reveal="scroll"
             ></canvas>
             <div class="section-actions">
-              <a class="section-link" href="/product" data-i18n="sections.section1.cta"></a>
+              <a class="section-link" href="/product">Learn more</a>
             </div>
           </div>
           <div class="section__media">
@@ -975,17 +962,17 @@
             ></video>
           </div>
           <div class="section__text">
-            <span class="section__tag" data-i18n="sections.section2.tag"></span>
+            <span class="section__tag">Systems</span>
             <canvas
               class="text-canvas section__title pixel-reveal"
-              data-i18n="sections.section2.title"
+              data-text="Purpose-built for the mission"
               data-font-size="58"
               data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
-              data-i18n="sections.section2.body"
+              data-text="Design-for-automation means our products are non-complex and fast to manufacture. Proprietary SW platform, the same stack powers future fixed-wings and missiles. Hardware built for the specific mission, e.g. kamikaze. Rapidly scalable to million-unit production for FPV drones."
               data-font-size="22"
               data-max-width="700"
               data-weight="500"
@@ -997,17 +984,17 @@
 
         <section class="section" id="section-3">
           <div class="section__text">
-            <span class="section__tag" data-i18n="sections.section3.tag"></span>
+            <span class="section__tag">Doctrine</span>
             <canvas
               class="text-canvas section__title pixel-reveal"
-              data-i18n="sections.section3.title"
+              data-text="Built by people who build things"
               data-font-size="58"
               data-max-width="720"
               data-reveal="scroll"
             ></canvas>
             <canvas
               class="text-canvas section__body pixel-reveal"
-              data-i18n="sections.section3.body"
+              data-text="Tenet was founded by people with roots in KTH's rocketry association and manufacturing association, where we built drones and rockets. We have experience from both the military, the manufacturing industry, and the consumer electronics sector. Five people on the team with more on the way."
               data-font-size="22"
               data-max-width="700"
               data-weight="500"
@@ -1015,8 +1002,9 @@
               data-reveal="scroll"
             ></canvas>
           </div>
-          <div class="section__media section__media--video">
-            <video
+          <div class="section__media">
+            <img src="/src/assets/doctrine.png" alt="Doctrine" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <!-- <video
               class="section__video"
               src="/tenetlrs1.mp4"
               autoplay
@@ -1024,7 +1012,7 @@
               loop
               playsinline
               preload="auto"
-            ></video>
+            ></video> -->
           </div>
         </section>
       </main>
@@ -1037,29 +1025,32 @@
             <a href="/" class="footer__logo-link" aria-label="Tenet Industries">
               <img src="/src/assets/logo.svg" alt="Tenet Industries" class="footer__logo" />
             </a>
-            <p class="footer__tagline" data-i18n="footer.tagline"></p>
+            <p class="footer__tagline">Low-cost massproducible defense systems</p>
           </div>
           <nav class="footer__nav-col">
-            <a href="#section-1" data-i18n="nav.platform"></a>
-            <a href="/product" data-i18n="nav.product"></a>
-            <a href="#section-2" data-i18n="nav.systems"></a>
-            <a href="#section-3" data-i18n="nav.doctrine"></a>
-            <a href="/contact" data-i18n="nav.contact"></a>
+            <a href="/">Home</a>
+            <a href="/product/midsummer">Midsummer</a>
+            <a href="/product/tenetlrs">TenetTX</a>
+            <a href="/contact">Contact</a>
           </nav>
           <div class="footer__doc-col">
             <div class="footer__doc-row">
-              <span data-i18n="footer.docCompany"></span>
+              <span>Company</span>
               <span>Tenet Industries</span>
             </div>
             <div class="footer__doc-row">
-              <span data-i18n="footer.docBacked"></span>
+              <span>Backed by</span>
               <span>Y Combinator</span>
+            </div>
+            <div class="footer__doc-row">
+              <span>Offices</span>
+              <span>Stockholm · San Francisco</span>
             </div>
           </div>
         </div>
         <div class="footer__bottom">
-          <span data-i18n="footer.copyright"></span>
-          <a href="/privacy" data-i18n="footer.privacy" class="footer__privacy-link"></a>
+          <span>© 2026 Tenet Industries</span>
+          <a href="/privacy" class="footer__privacy-link">Privacy Policy</a>
         </div>
       </div>
     </footer>
@@ -1068,52 +1059,7 @@
   <div class="grain-overlay" aria-hidden="true"></div>
 
   <script>
-    const SUPPORTED_LANGUAGES = ['en', 'sv', 'uk'];
-    const ENABLED_LANGUAGES = ['en', 'sv']; // add 'uk' to re-enable Ukrainian
-    const DEFAULT_LANGUAGE = 'en';
-    const LOCALE_PATHS = {
-      en: './locales/en.json',
-      sv: './locales/sv.json',
-      uk: './locales/uk.json'
-    };
-
-    let translations = {};
     let textBlocks = [];
-
-    function getNestedValue(object, path) {
-      return path.split('.').reduce((acc, key) => {
-        if (acc && Object.prototype.hasOwnProperty.call(acc, key)) {
-          return acc[key];
-        }
-        return undefined;
-      }, object);
-    }
-
-    function t(key) {
-      const value = getNestedValue(translations, key);
-      return typeof value === 'string' ? value : key;
-    }
-
-    async function loadTranslations(language) {
-      const response = await fetch(LOCALE_PATHS[language]);
-      if (!response.ok) {
-        throw new Error(`Failed to load translations for ${language}`);
-      }
-      return response.json();
-    }
-
-    function applyStaticTranslations() {
-      document.querySelectorAll('[data-i18n]:not(canvas)').forEach((element) => {
-        const key = element.dataset.i18n;
-        element.textContent = t(key);
-      });
-
-      document.title = t('meta.title');
-      document.documentElement.lang = localStorage.getItem('preferred-language') || DEFAULT_LANGUAGE;
-
-      const switcher = document.getElementById('language-select');
-      switcher.setAttribute('aria-label', t('language.ariaLabel'));
-    }
 
     class PixelRevealText {
       constructor(canvas) {
@@ -1299,9 +1245,6 @@
 
     function initTextBlocks() {
       destroyTextBlocks();
-      document.querySelectorAll('canvas[data-i18n]').forEach((canvas) => {
-        canvas.dataset.text = t(canvas.dataset.i18n);
-      });
       textBlocks = Array.from(document.querySelectorAll('.pixel-reveal')).map(
         (canvas) => new PixelRevealText(canvas)
       );
@@ -1338,43 +1281,12 @@
       requestAnimationFrame(animate);
     }
 
-    async function setLanguage(language) {
-      const safeLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-      translations = await loadTranslations(safeLanguage);
-      localStorage.setItem('preferred-language', safeLanguage);
-      document.querySelectorAll('.language-flag').forEach((button) => {
-        button.classList.toggle('active', button.dataset.lang === safeLanguage);
-      });
-      applyStaticTranslations();
-      await waitForFont('800 1em Oxanium');
-      initTextBlocks();
-      updateScrollRevealTargets();
-    }
-
-    function getInitialLanguage() {
-      const stored = localStorage.getItem('preferred-language');
-      if (ENABLED_LANGUAGES.includes(stored)) return stored;
-
-      const browserLanguage = (navigator.language || DEFAULT_LANGUAGE).slice(0, 2).toLowerCase();
-      return ENABLED_LANGUAGES.includes(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE;
-    }
-
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         textBlocks.forEach((block) => block.resize());
       }, 80);
-    });
-
-    document.querySelectorAll('.language-flag').forEach((button) => {
-      if (!ENABLED_LANGUAGES.includes(button.dataset.lang)) {
-        button.style.display = 'none';
-        return;
-      }
-      button.addEventListener('click', async () => {
-        await setLanguage(button.dataset.lang);
-      });
     });
 
     function initRadar() {
@@ -1484,17 +1396,11 @@
       });
     }
 
-    setLanguage(getInitialLanguage())
-      .then(() => {
-        requestAnimationFrame(animate);
-      })
-      .catch(async (error) => {
-        console.error(error);
-        if (getInitialLanguage() !== DEFAULT_LANGUAGE) {
-          await setLanguage(DEFAULT_LANGUAGE);
-          requestAnimationFrame(animate);
-        }
-      });
+    waitForFont('800 1em Oxanium').then(() => {
+      initTextBlocks();
+      updateScrollRevealTargets();
+      requestAnimationFrame(animate);
+    });
   </script>
 </body>
 </html>
