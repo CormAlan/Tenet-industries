@@ -115,5 +115,92 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Failed to send message' });
   }
 
+  // Send confirmation email to the submitter
+  const confirmationHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700;800&family=JetBrains+Mono:wght@400&display=swap');
+</style>
+</head>
+<body style="margin:0;padding:0;background:#000000;font-family:'Inter',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#000000;padding:48px 24px;">
+    <tr><td align="center">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;">
+
+        <!-- Logo -->
+        <tr>
+          <td style="padding-bottom:40px;">
+            <img src="https://tenetindustries.com/src/assets/logo.svg" alt="Tenet Industries" height="28" style="display:block;height:28px;width:auto;" />
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td style="padding-bottom:40px;">
+            <div style="height:1px;background:rgba(255,255,255,0.08);"></div>
+          </td>
+        </tr>
+
+        <!-- Eyebrow -->
+        <tr>
+          <td style="padding-bottom:16px;">
+            <span style="font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9d9d9d;">Message received</span>
+          </td>
+        </tr>
+
+        <!-- Heading -->
+        <tr>
+          <td style="padding-bottom:28px;">
+            <h1 style="margin:0;font-family:'Oxanium',Arial,sans-serif;font-size:36px;font-weight:800;line-height:1.1;text-transform:uppercase;letter-spacing:0.02em;color:#f5f5f5;">We'll be in touch,<br />${name.split(' ')[0]}.</h1>
+          </td>
+        </tr>
+
+        <!-- Body copy -->
+        <tr>
+          <td style="padding-bottom:40px;">
+            <p style="margin:0;font-size:15px;line-height:1.7;color:#c8c8c8;">Thanks for reaching out. We've received your message and will get back to you shortly.</p>
+          </td>
+        </tr>
+
+        <!-- Accent rule -->
+        <tr>
+          <td style="padding-bottom:40px;">
+            <div style="height:1px;background:#D9E812;width:48px;opacity:0.7;"></div>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td>
+            <p style="margin:0;font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#9d9d9d;">
+              Tenet Industries &nbsp;·&nbsp; <a href="https://tenetindustries.com" style="color:#9d9d9d;text-decoration:none;">tenetindustries.com</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'Tenet Industries <noreply@tenetindustries.com>',
+      to: [email],
+      subject: `We've received your message`,
+      html: confirmationHtml,
+      text: `Hi ${name.split(' ')[0]},\n\nThanks for reaching out — we've received your message and will get back to you shortly.\n\nTenet Industries\ntenetindustries.com`,
+    }),
+  });
+
   return res.status(200).json({ success: true });
 }
