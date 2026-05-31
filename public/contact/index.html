@@ -502,6 +502,15 @@
       white-space: pre-line;
     }
 
+    .contact-item__value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item__value a:hover {
+      text-decoration: underline;
+    }
+
     .contact-meta {
       display: grid;
       gap: 14px;
@@ -806,7 +815,7 @@
     <div class="page-width">
       <header class="hero" id="top">
         <div class="hero__inner">
-          <span class="eyebrow">Transmission channel</span>
+          <span class="eyebrow">Contact</span>
 
           <canvas
             class="text-canvas hero-title pixel-reveal"
@@ -840,7 +849,7 @@
             <div class="contact-items">
               <div class="contact-item">
                 <span class="contact-item__label">Email</span>
-                <div class="contact-item__value">contact@tenetindustries.com</div>
+                <div class="contact-item__value"><a href="mailto:contact@tenetindustries.com">contact@tenetindustries.com</a></div>
               </div>
 
 
@@ -855,10 +864,6 @@ San Francisco, USA</div>
               <div class="contact-meta__row">
                 <span>Response</span>
                 <span>Within 24h</span>
-              </div>
-              <div class="contact-meta__row">
-                <span>Availability</span>
-                <span>Mon-Fri</span>
               </div>
 
           </aside>
