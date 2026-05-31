@@ -53,17 +53,16 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      z-index: 50;
+      background: rgba(21, 21, 21, 0.94);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line-soft);
     }
 
     .topbar__inner {
       width: var(--page);
       margin: 0 auto;
-      height: 60px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -71,26 +70,23 @@
     }
 
     .brand { display: inline-flex; align-items: center; }
-    .brand__logo { height: 22px; }
+    .brand__logo { height: 34px; width: auto; }
 
     .topbar__right {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 18px;
     }
 
     .nav {
       display: flex;
-      gap: 20px;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .nav a {
+      align-items: center;
+      gap: 22px;
       color: var(--muted);
-      transition: color 0.2s ease;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
@@ -151,29 +147,41 @@
       border: 1px solid var(--line-soft);
       color: var(--muted);
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 6px 12px;
+      padding: 5px 10px;
       cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.18s ease, color 0.18s ease;
     }
+    .nav-toggle:hover { border-color: var(--text); color: var(--text); }
 
     .mobile-nav {
       display: none;
-      flex-direction: column;
-      padding: 16px;
-      gap: 16px;
-      background: var(--surface);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(12, 12, 12, 0.98);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line-soft);
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      z-index: 48;
     }
-
-    .mobile-nav a { color: var(--muted); }
-    .mobile-nav a:hover { color: var(--text); }
-    .mobile-nav.is-open { display: flex; }
+    .mobile-nav.is-open { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover,
+    .mobile-nav a[aria-current="page"] { color: var(--text); }
 
     /* ── Privacy content ── */
     .privacy-page {
@@ -256,43 +264,47 @@
     .footer__inner {
       width: var(--page);
       margin: 0 auto;
-      padding: 48px 0 40px;
+      padding: 52px 0 32px;
     }
 
     .footer__top {
       display: grid;
       grid-template-columns: 1fr auto auto;
-      gap: 48px;
+      gap: 56px;
       padding-bottom: 32px;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: start;
     }
 
     .footer__brand-col {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
 
     .footer__logo-link { display: inline-flex; }
-    .footer__logo { height: 26px; }
+    .footer__logo { height: 26px; width: auto; opacity: 0.8; }
 
     .footer__tagline {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
       margin: 0;
+      max-width: 34ch;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      line-height: 1.75;
+      text-transform: uppercase;
     }
 
     .footer__nav-col {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      color: var(--muted);
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
     }
 
     .footer__nav-col a:hover { color: var(--text); }
@@ -300,7 +312,6 @@
     .footer__doc-col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
       min-width: 200px;
     }
 
@@ -308,6 +319,8 @@
       display: flex;
       justify-content: space-between;
       gap: 24px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-soft);
       font-family: var(--font-mono);
       font-size: 0.72rem;
       letter-spacing: 0.13em;
@@ -315,15 +328,15 @@
     }
 
     .footer__doc-row span:first-child { color: var(--muted); }
-    .footer__doc-row span:last-child { color: var(--text); text-align: right; }
+    .footer__doc-row span:last-child { text-align: right; }
 
     .footer__bottom {
       padding-top: 24px;
+      color: var(--muted);
       font-family: var(--font-mono);
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -337,10 +350,12 @@
 
     .footer__privacy-link:hover { color: var(--text); }
 
-    @media (max-width: 900px) {
+    @media (max-width: 680px) {
       .nav { display: none; }
       .nav-toggle { display: block; }
+    }
 
+    @media (max-width: 900px) {
       .footer__top {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -392,7 +407,7 @@
 
     <section class="privacy-section">
       <h2>Who we are</h2>
-      <p>Tenet Industries is a defense technology company based in Stockholm, Sweden. We build low-cost, mass-producible defense systems. You can reach us at <a href="mailto:founders@tenetindustries.com">founders@tenetindustries.com</a>.</p>
+      <p>Tenet Industries is a defense technology company based in Stockholm, Sweden. We build low-cost, mass-producible defense systems. You can reach us at <a href="mailto:contact@tenetindustries.com">contact@tenetindustries.com</a>.</p>
     </section>
 
     <section class="privacy-section">
@@ -435,7 +450,7 @@
         <li>Object to or restrict processing</li>
         <li>Lodge a complaint with the Swedish Authority for Privacy Protection (IMY) at <a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">imy.se</a></li>
       </ul>
-      <p>To exercise any of these rights, contact us at <a href="mailto:founders@tenetindustries.com">founders@tenetindustries.com</a>.</p>
+      <p>To exercise any of these rights, contact us at <a href="mailto:contact@tenetindustries.com">contact@tenetindustries.com</a>.</p>
     </section>
 
     <section class="privacy-section">

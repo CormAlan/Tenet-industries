@@ -231,15 +231,85 @@
 
     .contact-shell {
       position: relative;
-      display: block;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.85fr) minmax(280px, 1.15fr);
+      gap: 40px;
       padding: 38px;
       border: 1px solid var(--line-soft);
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       overflow: hidden;
     }
 
-    .contact-details {
-      max-width: 560px;
+    .contact-pgp {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-pgp__title {
+      margin: 0 0 14px;
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .contact-pgp__copy {
+      margin: 0 0 20px;
+      color: #b0b0b0;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .contact-pgp__block {
+      position: relative;
+    }
+
+    .contact-pgp__key {
+      display: block;
+      width: 100%;
+      height: 380px;
+      overflow-y: auto;
+      padding: 16px;
+      background: rgba(0,0,0,0.38);
+      border: 1px solid var(--line-soft);
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: #b0b0b0;
+      white-space: pre;
+      word-break: break-all;
+      resize: none;
+      outline: none;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
+    }
+
+    .contact-pgp__copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 9px 16px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .contact-pgp__copy-btn:hover {
+      border-color: rgba(217, 232, 18, 0.46);
+      color: var(--text);
+    }
+
+    .contact-pgp__copy-btn--copied {
+      border-color: rgba(217, 232, 18, 0.46) !important;
+      color: #D9E812 !important;
     }
 
     .contact-shell::before {
@@ -625,6 +695,12 @@
       }
     }
 
+    @media (max-width: 980px) {
+      .contact-pgp__key {
+        height: 320px;
+      }
+    }
+
     @media (max-width: 900px) {
       .nav {
         gap: 14px;
@@ -786,6 +862,67 @@ San Francisco, USA</div>
               </div>
 
           </aside>
+
+          <div class="contact-pgp">
+            <span class="contact-panel-tag">PGP / Encrypted mail</span>
+            <h2 class="contact-pgp__title">Public key</h2>
+            <p class="contact-pgp__copy">To send us an encrypted message, import this key into your PGP client and encrypt your email before sending to contact@tenetindustries.com.</p>
+            <div class="contact-pgp__block">
+              <textarea class="contact-pgp__key" readonly spellcheck="false" aria-label="PGP public key">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=FrJy
+-----END PGP PUBLIC KEY BLOCK-----</textarea>
+              <button class="contact-pgp__copy-btn" id="pgp-copy-btn" type="button">Copy key</button>
+            </div>
+          </div>
         </section>
       </main>
     </div>
@@ -1119,6 +1256,22 @@ San Francisco, USA</div>
             form.appendChild(err);
           }
         }
+      });
+    }
+
+    // PGP copy button
+    const pgpBtn = document.getElementById('pgp-copy-btn');
+    const pgpKey = document.querySelector('.contact-pgp__key');
+    if (pgpBtn && pgpKey) {
+      pgpBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(pgpKey.value).then(() => {
+          pgpBtn.textContent = 'Copied';
+          pgpBtn.classList.add('contact-pgp__copy-btn--copied');
+          setTimeout(() => {
+            pgpBtn.textContent = 'Copy key';
+            pgpBtn.classList.remove('contact-pgp__copy-btn--copied');
+          }, 2000);
+        });
       });
     }
   </script>
