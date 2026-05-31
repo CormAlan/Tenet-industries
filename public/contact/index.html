@@ -1220,50 +1220,6 @@ vRbeRCIi4lK/VVorVh9oDQrR9q4NFpvNobGVw+Q9/MwF0b/b0ci/XmqK2Uw0Qx39
       requestAnimationFrame(animate);
     });
 
-    const form = document.querySelector('.contact-form-grid');
-    const submitBtn = form && form.querySelector('.contact-submit');
-
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = '...';
-
-        const data = {
-          name: form.querySelector('[name="name"]').value.trim(),
-          email: form.querySelector('[name="email"]').value.trim(),
-          company: form.querySelector('[name="company"]').value.trim(),
-          subject: form.querySelector('[name="subject"]').value.trim(),
-          message: form.querySelector('[name="message"]').value.trim(),
-        };
-
-        try {
-          const res = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-          });
-
-          if (res.ok) {
-            form.innerHTML = '<p class="contact-form-success">Message sent. We\'ll respond within 24 hours.</p>';
-          } else {
-            throw new Error('Server error');
-          }
-        } catch {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send inquiry';
-          const existing = form.querySelector('.contact-form-error');
-          if (!existing) {
-            const err = document.createElement('p');
-            err.className = 'contact-form-error';
-            err.textContent = 'Failed to send. Please try again or email us directly.';
-            form.appendChild(err);
-          }
-        }
-      });
-    }
-
     // PGP copy button
     const pgpBtn = document.getElementById('pgp-copy-btn');
     const pgpKey = document.querySelector('.contact-pgp__key');
